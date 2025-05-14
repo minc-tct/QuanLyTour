@@ -74,7 +74,7 @@
             // ptbAnhTour
             // 
             this.ptbAnhTour.Location = new System.Drawing.Point(75, 12);
-            this.ptbAnhTour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbAnhTour.Margin = new System.Windows.Forms.Padding(4);
             this.ptbAnhTour.Name = "ptbAnhTour";
             this.ptbAnhTour.Size = new System.Drawing.Size(508, 271);
             this.ptbAnhTour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,9 +149,9 @@
             this.gbTTTour.ForeColor = System.Drawing.Color.Blue;
             this.gbTTTour.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gbTTTour.Location = new System.Drawing.Point(659, 291);
-            this.gbTTTour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbTTTour.Margin = new System.Windows.Forms.Padding(4);
             this.gbTTTour.Name = "gbTTTour";
-            this.gbTTTour.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbTTTour.Padding = new System.Windows.Forms.Padding(4);
             this.gbTTTour.Size = new System.Drawing.Size(601, 301);
             this.gbTTTour.TabIndex = 109;
             this.gbTTTour.TabStop = false;
@@ -239,7 +239,7 @@
             this.txtSLVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSLVe.ForeColor = System.Drawing.Color.Black;
             this.txtSLVe.Location = new System.Drawing.Point(307, 145);
-            this.txtSLVe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSLVe.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLVe.Name = "txtSLVe";
             this.txtSLVe.Size = new System.Drawing.Size(88, 34);
             this.txtSLVe.TabIndex = 32;
@@ -347,7 +347,7 @@
             this.rdoNu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.rdoNu.ForeColor = System.Drawing.Color.Black;
             this.rdoNu.Location = new System.Drawing.Point(319, 254);
-            this.rdoNu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoNu.Margin = new System.Windows.Forms.Padding(4);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(61, 30);
             this.rdoNu.TabIndex = 45;
@@ -415,9 +415,9 @@
             this.grTTKH.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grTTKH.ForeColor = System.Drawing.Color.Blue;
             this.grTTKH.Location = new System.Drawing.Point(32, 291);
-            this.grTTKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grTTKH.Margin = new System.Windows.Forms.Padding(4);
             this.grTTKH.Name = "grTTKH";
-            this.grTTKH.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grTTKH.Padding = new System.Windows.Forms.Padding(4);
             this.grTTKH.Size = new System.Drawing.Size(607, 305);
             this.grTTKH.TabIndex = 108;
             this.grTTKH.TabStop = false;
@@ -429,7 +429,7 @@
             this.rdoNam.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.rdoNam.ForeColor = System.Drawing.Color.Black;
             this.rdoNam.Location = new System.Drawing.Point(188, 254);
-            this.rdoNam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoNam.Margin = new System.Windows.Forms.Padding(4);
             this.rdoNam.Name = "rdoNam";
             this.rdoNam.Size = new System.Drawing.Size(77, 30);
             this.rdoNam.TabIndex = 44;

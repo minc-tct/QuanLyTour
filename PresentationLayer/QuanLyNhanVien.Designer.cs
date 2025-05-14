@@ -312,7 +312,7 @@
             this.Controls.Add(this.dgvNhanVien);
             this.Name = "QuanLyNhanVien";
             this.Text = "QuanLyNhanVien";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.QuanLyNhanVien_Load);
             this.grBoxNV.ResumeLayout(false);
             this.grBoxNV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();

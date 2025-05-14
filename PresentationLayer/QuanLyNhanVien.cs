@@ -22,7 +22,7 @@ namespace PresentationLayer
             this.tenDangNhap = tenDangNhap;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void QuanLyNhanVien_Load(object sender, EventArgs e)
         {
             // Gắn lại vị trí của grBoxNV theo vị trí của dgvNhanVien
             grBoxNV.Top = dgvNhanVien.Bottom + 10;

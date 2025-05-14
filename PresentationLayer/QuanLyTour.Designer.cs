@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboMaDiemDuLich = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbMDDL = new System.Windows.Forms.Label();
             this.txtGiaTour = new System.Windows.Forms.TextBox();
             this.lbGTour = new System.Windows.Forms.Label();
             this.cboMaXuatPhat = new System.Windows.Forms.ComboBox();
@@ -98,17 +98,17 @@
             this.cboMaDiemDuLich.Size = new System.Drawing.Size(261, 28);
             this.cboMaDiemDuLich.TabIndex = 131;
             // 
-            // label2
+            // lbMDDL
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(348, 362);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 28);
-            this.label2.TabIndex = 130;
-            this.label2.Text = "Mã điểm du lịch:";
-            this.label2.UseWaitCursor = true;
+            this.lbMDDL.AutoSize = true;
+            this.lbMDDL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbMDDL.ForeColor = System.Drawing.Color.Black;
+            this.lbMDDL.Location = new System.Drawing.Point(348, 362);
+            this.lbMDDL.Name = "lbMDDL";
+            this.lbMDDL.Size = new System.Drawing.Size(156, 28);
+            this.lbMDDL.TabIndex = 130;
+            this.lbMDDL.Text = "Mã điểm du lịch:";
+            this.lbMDDL.UseWaitCursor = true;
             // 
             // txtGiaTour
             // 
@@ -326,7 +326,7 @@
             // grbTTTour
             // 
             this.grbTTTour.Controls.Add(this.cboMaDiemDuLich);
-            this.grbTTTour.Controls.Add(this.label2);
+            this.grbTTTour.Controls.Add(this.lbMDDL);
             this.grbTTTour.Controls.Add(this.txtGiaTour);
             this.grbTTTour.Controls.Add(this.lbGTour);
             this.grbTTTour.Controls.Add(this.cboMaXuatPhat);
@@ -384,14 +384,14 @@
             this.dgvThongtinTour.AllowUserToAddRows = false;
             this.dgvThongtinTour.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvThongtinTour.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThongtinTour.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThongtinTour.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThongtinTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongtinTour.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -406,14 +406,14 @@
             this.Column10,
             this.Column11});
             this.dgvThongtinTour.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThongtinTour.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvThongtinTour.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvThongtinTour.Location = new System.Drawing.Point(43, 491);
             this.dgvThongtinTour.Name = "dgvThongtinTour";
             this.dgvThongtinTour.RowHeadersWidth = 51;
@@ -427,8 +427,8 @@
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.DataPropertyName = "MaTour";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Mã tour";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -632,7 +632,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cboMaDiemDuLich;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbMDDL;
         private System.Windows.Forms.TextBox txtGiaTour;
         private System.Windows.Forms.Label lbGTour;
         private System.Windows.Forms.ComboBox cboMaXuatPhat;

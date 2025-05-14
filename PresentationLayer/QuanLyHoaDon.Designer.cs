@@ -34,9 +34,9 @@
             this.txtMaTour = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.lbTT = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbNgayLapHD = new System.Windows.Forms.Label();
             this.btnChiTietHD = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbMaTour = new System.Windows.Forms.Label();
             this.dptNgayLapHD = new System.Windows.Forms.DateTimePicker();
             this.lbSoHD = new System.Windows.Forms.Label();
             this.grbTTHD = new System.Windows.Forms.GroupBox();
@@ -114,18 +114,18 @@
             this.lbTT.TabIndex = 79;
             this.lbTT.Text = "Thành tiền: ";
             // 
-            // label2
+            // lbNgayLapHD
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(697, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 28);
-            this.label2.TabIndex = 80;
-            this.label2.Text = "Ngày lập hóa đơn:";
+            this.lbNgayLapHD.AutoSize = true;
+            this.lbNgayLapHD.BackColor = System.Drawing.Color.Transparent;
+            this.lbNgayLapHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbNgayLapHD.ForeColor = System.Drawing.Color.Black;
+            this.lbNgayLapHD.Location = new System.Drawing.Point(697, 65);
+            this.lbNgayLapHD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNgayLapHD.Name = "lbNgayLapHD";
+            this.lbNgayLapHD.Size = new System.Drawing.Size(173, 28);
+            this.lbNgayLapHD.TabIndex = 80;
+            this.lbNgayLapHD.Text = "Ngày lập hóa đơn:";
             // 
             // btnChiTietHD
             // 
@@ -143,18 +143,18 @@
             this.btnChiTietHD.UseVisualStyleBackColor = false;
             this.btnChiTietHD.Click += new System.EventHandler(this.btnChiTietHD_Click);
             // 
-            // label6
+            // lbMaTour
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(90, 140);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 28);
-            this.label6.TabIndex = 78;
-            this.label6.Text = "Mã tour:";
+            this.lbMaTour.AutoSize = true;
+            this.lbMaTour.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaTour.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbMaTour.ForeColor = System.Drawing.Color.Black;
+            this.lbMaTour.Location = new System.Drawing.Point(90, 140);
+            this.lbMaTour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbMaTour.Name = "lbMaTour";
+            this.lbMaTour.Size = new System.Drawing.Size(86, 28);
+            this.lbMaTour.TabIndex = 78;
+            this.lbMaTour.Text = "Mã tour:";
             // 
             // dptNgayLapHD
             // 
@@ -188,9 +188,9 @@
             this.grbTTHD.Controls.Add(this.txtMaTour);
             this.grbTTHD.Controls.Add(this.btnXoa);
             this.grbTTHD.Controls.Add(this.lbTT);
-            this.grbTTHD.Controls.Add(this.label2);
+            this.grbTTHD.Controls.Add(this.lbNgayLapHD);
             this.grbTTHD.Controls.Add(this.btnChiTietHD);
-            this.grbTTHD.Controls.Add(this.label6);
+            this.grbTTHD.Controls.Add(this.lbMaTour);
             this.grbTTHD.Controls.Add(this.dptNgayLapHD);
             this.grbTTHD.Controls.Add(this.lbSoHD);
             this.grbTTHD.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -326,9 +326,9 @@
         private System.Windows.Forms.TextBox txtMaTour;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label lbTT;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNgayLapHD;
         private System.Windows.Forms.Button btnChiTietHD;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbMaTour;
         private System.Windows.Forms.DateTimePicker dptNgayLapHD;
         private System.Windows.Forms.Label lbSoHD;
         private System.Windows.Forms.GroupBox grbTTHD;

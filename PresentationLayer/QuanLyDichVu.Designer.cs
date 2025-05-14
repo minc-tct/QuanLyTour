@@ -39,10 +39,10 @@ namespace PresentationLayer
             this.pnlDiemKhoiHanhHeader = new System.Windows.Forms.Panel();
             this.lblDiemKhoiHanh = new System.Windows.Forms.Label();
             this.pnlDiemKhoiHanhButtons = new System.Windows.Forms.Panel();
-            this.btnAddKH = new System.Windows.Forms.Button();
-            this.btnUpdateKH = new System.Windows.Forms.Button();
-            this.btnDeleteKH = new System.Windows.Forms.Button();
-            this.btnRefreshKH = new System.Windows.Forms.Button();
+            this.btnAddDKH = new System.Windows.Forms.Button();
+            this.btnUpdateDKH = new System.Windows.Forms.Button();
+            this.btnDeleteDKH = new System.Windows.Forms.Button();
+            this.btnRefreshDDKH = new System.Windows.Forms.Button();
             this.pnlDiemDuLich = new System.Windows.Forms.Panel();
             this.dgvDiemDuLich = new System.Windows.Forms.DataGridView();
             this.lblMaDiemDuLich = new System.Windows.Forms.Label();
@@ -173,62 +173,62 @@ namespace PresentationLayer
             // 
             // pnlDiemKhoiHanhButtons
             // 
-            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnAddKH);
-            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnUpdateKH);
-            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnDeleteKH);
-            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnRefreshKH);
+            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnAddDKH);
+            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnUpdateDKH);
+            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnDeleteDKH);
+            this.pnlDiemKhoiHanhButtons.Controls.Add(this.btnRefreshDDKH);
             this.pnlDiemKhoiHanhButtons.Location = new System.Drawing.Point(3, 174);
             this.pnlDiemKhoiHanhButtons.Name = "pnlDiemKhoiHanhButtons";
             this.pnlDiemKhoiHanhButtons.Size = new System.Drawing.Size(270, 32);
             this.pnlDiemKhoiHanhButtons.TabIndex = 2;
             // 
-            // btnAddKH
+            // btnAddDKH
             // 
-            this.btnAddKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(227)))), ((int)(((byte)(186)))));
-            this.btnAddKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.btnAddKH.Location = new System.Drawing.Point(5, 6);
-            this.btnAddKH.Name = "btnAddKH";
-            this.btnAddKH.Size = new System.Drawing.Size(60, 23);
-            this.btnAddKH.TabIndex = 4;
-            this.btnAddKH.Text = "Thêm";
-            this.btnAddKH.UseVisualStyleBackColor = false;
-            this.btnAddKH.Click += new System.EventHandler(this.btnAddKH_Click);
+            this.btnAddDKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(227)))), ((int)(((byte)(186)))));
+            this.btnAddDKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnAddDKH.Location = new System.Drawing.Point(5, 6);
+            this.btnAddDKH.Name = "btnAddDKH";
+            this.btnAddDKH.Size = new System.Drawing.Size(60, 23);
+            this.btnAddDKH.TabIndex = 4;
+            this.btnAddDKH.Text = "Thêm";
+            this.btnAddDKH.UseVisualStyleBackColor = false;
+            this.btnAddDKH.Click += new System.EventHandler(this.btnAddKH_Click);
             // 
-            // btnUpdateKH
+            // btnUpdateDKH
             // 
-            this.btnUpdateKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(174)))));
-            this.btnUpdateKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.btnUpdateKH.Location = new System.Drawing.Point(71, 6);
-            this.btnUpdateKH.Name = "btnUpdateKH";
-            this.btnUpdateKH.Size = new System.Drawing.Size(60, 23);
-            this.btnUpdateKH.TabIndex = 5;
-            this.btnUpdateKH.Text = "Sửa";
-            this.btnUpdateKH.UseVisualStyleBackColor = false;
-            this.btnUpdateKH.Click += new System.EventHandler(this.btnUpdateKH_Click);
+            this.btnUpdateDKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(174)))));
+            this.btnUpdateDKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnUpdateDKH.Location = new System.Drawing.Point(71, 6);
+            this.btnUpdateDKH.Name = "btnUpdateDKH";
+            this.btnUpdateDKH.Size = new System.Drawing.Size(60, 23);
+            this.btnUpdateDKH.TabIndex = 5;
+            this.btnUpdateDKH.Text = "Sửa";
+            this.btnUpdateDKH.UseVisualStyleBackColor = false;
+            this.btnUpdateDKH.Click += new System.EventHandler(this.btnUpdateKH_Click);
             // 
-            // btnDeleteKH
+            // btnDeleteDKH
             // 
-            this.btnDeleteKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(186)))));
-            this.btnDeleteKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.btnDeleteKH.Location = new System.Drawing.Point(137, 6);
-            this.btnDeleteKH.Name = "btnDeleteKH";
-            this.btnDeleteKH.Size = new System.Drawing.Size(60, 23);
-            this.btnDeleteKH.TabIndex = 6;
-            this.btnDeleteKH.Text = "Xóa";
-            this.btnDeleteKH.UseVisualStyleBackColor = false;
-            this.btnDeleteKH.Click += new System.EventHandler(this.btnDeleteKH_Click);
+            this.btnDeleteDKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(186)))));
+            this.btnDeleteDKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnDeleteDKH.Location = new System.Drawing.Point(137, 6);
+            this.btnDeleteDKH.Name = "btnDeleteDKH";
+            this.btnDeleteDKH.Size = new System.Drawing.Size(60, 23);
+            this.btnDeleteDKH.TabIndex = 6;
+            this.btnDeleteDKH.Text = "Xóa";
+            this.btnDeleteDKH.UseVisualStyleBackColor = false;
+            this.btnDeleteDKH.Click += new System.EventHandler(this.btnDeleteKH_Click);
             // 
-            // btnRefreshKH
+            // btnRefreshDDKH
             // 
-            this.btnRefreshKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.btnRefreshKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.btnRefreshKH.Location = new System.Drawing.Point(203, 6);
-            this.btnRefreshKH.Name = "btnRefreshKH";
-            this.btnRefreshKH.Size = new System.Drawing.Size(60, 23);
-            this.btnRefreshKH.TabIndex = 7;
-            this.btnRefreshKH.Text = "⟳";
-            this.btnRefreshKH.UseVisualStyleBackColor = false;
-            this.btnRefreshKH.Click += new System.EventHandler(this.btnRefreshKH_Click);
+            this.btnRefreshDDKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.btnRefreshDDKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnRefreshDDKH.Location = new System.Drawing.Point(203, 6);
+            this.btnRefreshDDKH.Name = "btnRefreshDDKH";
+            this.btnRefreshDDKH.Size = new System.Drawing.Size(60, 23);
+            this.btnRefreshDDKH.TabIndex = 7;
+            this.btnRefreshDDKH.Text = "⟳";
+            this.btnRefreshDDKH.UseVisualStyleBackColor = false;
+            this.btnRefreshDDKH.Click += new System.EventHandler(this.btnRefreshKH_Click);
             // 
             // pnlDiemDuLich
             // 
@@ -608,10 +608,10 @@ namespace PresentationLayer
         private System.Windows.Forms.TextBox txtTenDiemDen;
         private System.Windows.Forms.Label lblLoaiTourDL;
         private System.Windows.Forms.ComboBox cmbLoaiTourDL;
-        private System.Windows.Forms.Button btnAddKH;
-        private System.Windows.Forms.Button btnUpdateKH;
-        private System.Windows.Forms.Button btnDeleteKH;
-        private System.Windows.Forms.Button btnRefreshKH;
+        private System.Windows.Forms.Button btnAddDKH;
+        private System.Windows.Forms.Button btnUpdateDKH;
+        private System.Windows.Forms.Button btnDeleteDKH;
+        private System.Windows.Forms.Button btnRefreshDDKH;
         private Label lblMaDiemKhoiHanh;
         private TextBox txtMaDiemKhoiHanh;
         private Label lblTenDiemKhoiHanh;
