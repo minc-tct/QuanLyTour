@@ -16,6 +16,10 @@ namespace BusinessLayer
         {
             nvdl = new NhanVienDL();
         }
+        public string LayMaNVTheoTenDangNhap(string tenDangNhap)
+        {
+            return nvdl.GetMaNVByTenDangNhap(tenDangNhap);
+        }
         public string LayHoTenTheoTenDangNhap(string tenDangNhap)
         {
             return nvdl.GetHoTenByTenDangNhap(tenDangNhap);

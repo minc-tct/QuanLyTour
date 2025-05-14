@@ -45,52 +45,65 @@ namespace PresentationLayer
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            try
             {
-                string tenDangNhap = txtUsername.Text.Trim();
-                string matKhau = txtPassword.Text.Trim();
-                string xacNhan = txtConfirmPassword.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string maNhap = txtMaXacThuc.Text.Trim();
 
-                if (matKhau != xacNhan)
+                if (!DangKyBL.KiemTraMa(email, maNhap))
                 {
-                    MessageBox.Show("Mật khẩu xác nhận không khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mã xác thực không đúng hoặc chưa được gửi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                try
+                string tenDangNhap = txtUsername.Text.Trim();
+                string matKhau = txtPassword.Text.Trim();
+
+                NhanVien nv = new NhanVien
                 {
-                    NhanVien nv = new NhanVien
-                    {
-                        HoTen = txtFullName.Text.Trim(),
-                        GioiTinh = cboGender.SelectedItem?.ToString(),
-                        NgaySinh = dtpDateofBirth.Value,
-                        Email = txtEmail.Text.Trim(),
-                        DiaChi = txtAddress.Text.Trim(),
-                        SDT = txtPhone.Text.Trim(),
-                        MaCV = cboUserRole.SelectedItem.ToString() == "Quản lý" ? "QL" : "NV"
-                    };
+                    HoTen = txtFullName.Text.Trim(),
+                    GioiTinh = cboGender.SelectedItem?.ToString(),
+                    NgaySinh = dtpDateofBirth.Value,
+                    Email = email,
+                    DiaChi = txtAddress.Text.Trim(),
+                    SDT = txtPhone.Text.Trim(),
+                    MaCV = cboUserRole.SelectedItem.ToString() == "Quản lý" ? "QL" : "NV"
+                };
 
-                    Account tk = new Account
-                    {
-                        TenDangNhap = tenDangNhap,
-                        MatKhau = matKhau
-                    };
+                Account tk = new Account
+                {
+                    TenDangNhap = tenDangNhap,
+                    MatKhau = matKhau
+                };
 
-                    DangKyBL dangKyBL = new DangKyBL();
-                    if (dangKyBL.DangKy(nv, tk))
-                    {
-                        MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        returnDN();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng ký thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                DangKyBL dangKyBL = new DangKyBL();
+                if (dangKyBL.DangKy(nv, tk))
+                {
+                    MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    returnDN(); 
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đăng ký thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGuiMa_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text.Trim();
+            if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Vui lòng nhập email.");
+                return;
+            }
+
+            DangKyBL.GuiMaXacThuc(email);
+            MessageBox.Show("Mã xác thực đã được gửi tới email.");
         }
     }
 }

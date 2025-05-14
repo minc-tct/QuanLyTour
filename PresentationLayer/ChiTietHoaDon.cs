@@ -12,53 +12,46 @@ using TransferObject;
 
 namespace PresentationLayer
 {
-    public partial class ChiTietHD: Form
+    public partial class ChiTietHoaDon: Form
     {
-        ChiTietHoaDonBL CTHDbl = new ChiTietHoaDonBL();
+        ChiTietHoaDonBL cthdbl = new ChiTietHoaDonBL();
         private string maHD;
-        private ChiTietHoaDon dtoHienTai;
+        private ChiTietHD cthd;
 
-        public ChiTietHD()
-        {
-            InitializeComponent();
-        }
-        public ChiTietHD(string soHD)
+        public ChiTietHoaDon(string soHD)
         {
             InitializeComponent();
             maHD = soHD;
-        
         }
-        private void ChiTietHD_Load(object sender, EventArgs e)
-        {
 
-            // Kiểm tra giá trị của maHD trước khi lấy thông tin chi tiết
+        private void ChiTietHoaDon_Load(object sender, EventArgs e)
+        {
             if (string.IsNullOrEmpty(maHD))
             {
-                MessageBox.Show("Số hóa đơn không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không có mã hóa đơn để hiển thị!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
                 return;
             }
 
-            // Lấy thông tin chi tiết hóa đơn từ BusinessLayer
-            dtoHienTai = CTHDbl.LayThongTinChiTiet(maHD);
+            cthd = cthdbl.LayThongTinChiTiet(maHD);
 
-            if (dtoHienTai != null)
+            if (cthd != null)
             {
-                lbSoHD.Text = dtoHienTai.SoHD;
-                lbTenNV.Text = dtoHienTai.TenNV;
-                lbTenKH.Text = dtoHienTai.TenKH;
-                lbNgayLap.Text = dtoHienTai.NgayLapHD.ToString("dd/MM/yyyy");
-                lbThanhTien.Text = dtoHienTai.ThanhTien.ToString("N0"); // Hiển thị thành tiền
-
-                lbTenTour.Text = dtoHienTai.TenTour;
-                lbDiemXP.Text = dtoHienTai.DiemXP;
-                lbPTien.Text = dtoHienTai.TenPhuongTien;
-                lbNgayDi.Text = dtoHienTai.TGBatDau.ToString("dd/MM/yyyy");
-                lbNgayKT.Text = dtoHienTai.TGKetThuc.ToString("dd/MM/yyyy");
-                lbSoVe.Text = dtoHienTai.SLVeConLai.ToString(); // Hiển thị số lượng vé
+                lbSoHD.Text = cthd.SoHD;
+                lbTenKH.Text = cthd.TenKH;
+                lbNgayLap.Text = cthd.NgayLapHD.ToString("dd/MM/yyyy");
+                lbThanhTien.Text = cthd.ThanhTien.ToString("N0"); 
+                lbTenTour.Text = cthd.TenTour;
+                lbDiemXP.Text = cthd.DiemXP;
+                lbPTien.Text = cthd.TenPhuongTien;
+                lbNgayDi.Text = cthd.TGBatDau.ToString("dd/MM/yyyy");
+                lbNgayKT.Text = cthd.TGKetThuc.ToString("dd/MM/yyyy");
+                lbSoVe.Text = cthd.SLVe.ToString(); 
             }
             else
             {
-                MessageBox.Show("Không tìm thấy thông tin chi tiết hóa đơn.");
+                MessageBox.Show("Không tìm thấy thông tin hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -72,19 +65,18 @@ namespace PresentationLayer
             e.Graphics.DrawString("HÓA ĐƠN DU LỊCH", fontTitle, Brushes.DarkRed, new PointF(250, y));
             y += 50;
 
-            if (dtoHienTai != null)
+            if (cthd != null)
             {
-                e.Graphics.DrawString("Số HĐ: " + dtoHienTai.SoHD, fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Khách hàng: " + dtoHienTai.TenKH, fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Nhân viên: " + dtoHienTai.TenNV, fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Ngày lập: " + dtoHienTai.NgayLapHD.ToString("dd/MM/yyyy"), fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Tên tour: " + dtoHienTai.TenTour, fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Điểm xuất phát: " + dtoHienTai.DiemXP, fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Phương tiện: " + dtoHienTai.TenPhuongTien, fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Ngày đi: " + dtoHienTai.TGBatDau.ToString("dd/MM/yyyy"), fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Ngày kết thúc: " + dtoHienTai.TGKetThuc.ToString("dd/MM/yyyy"), fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Số vé: " + dtoHienTai.SLVeConLai.ToString(), fontContent, brush, new PointF(50, y)); y += 30;
-                e.Graphics.DrawString("Thành tiền: " + dtoHienTai.ThanhTien.ToString("N0") + " VND", fontContent, brush, new PointF(50, y)); y += 40;
+                e.Graphics.DrawString("Số HĐ: " + cthd.SoHD, fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Khách hàng: " + cthd.TenKH, fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Ngày lập: " + cthd.NgayLapHD.ToString("dd/MM/yyyy"), fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Tên tour: " + cthd.TenTour, fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Điểm xuất phát: " + cthd.DiemXP, fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Phương tiện: " + cthd.TenPhuongTien, fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Ngày đi: " + cthd.TGBatDau.ToString("dd/MM/yyyy"), fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Ngày kết thúc: " + cthd.TGKetThuc.ToString("dd/MM/yyyy"), fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Số vé: " + cthd.SLVe.ToString(), fontContent, brush, new PointF(50, y)); y += 30;
+                e.Graphics.DrawString("Thành tiền: " + cthd.ThanhTien.ToString("N0") + " VND", fontContent, brush, new PointF(50, y)); y += 40;
             }
             else
             {
@@ -92,8 +84,8 @@ namespace PresentationLayer
             }
 
             e.Graphics.DrawString("Cảm ơn quý khách. Chúc chuyến đi vui vẻ!", fontContent, brush, new PointF(50, y));
-        }
-       
+        
+    }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
@@ -106,5 +98,6 @@ namespace PresentationLayer
         {
             this.Close();
         }
+
     }
 }

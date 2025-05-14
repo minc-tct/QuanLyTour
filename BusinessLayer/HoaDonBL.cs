@@ -8,35 +8,31 @@ namespace BusinessLayer
 {
     public class HoaDonBL
     {
-
-        private HoaDonDL hoaDonDL = new HoaDonDL();
+        private HoaDonDL hddl;
+        public HoaDonBL()
+        {
+            hddl = new HoaDonDL();
+        }
 
         public List<HoaDon> GetHoaDons()
         {
             try
             {
-                return hoaDonDL.GetHoaDon();
+                return hddl.GetHoaDon();
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 throw ex;
             }
         }
-        public int XoaHoaDon(string soHD)
+        public bool XoaHoaDon(string soHD)
         {
-            return hoaDonDL.DeleteHoaDon(soHD);
+            return hddl.DeleteHoaDon(soHD);
         }
-        public bool XuLyThanhToan(HoaDon hd)
+        public string XuLyThanhToan(HoaDon hd)
         {
-            hd.SoHD = hoaDonDL.GenerateMaHD();
-            string soHD = hoaDonDL.ThemHoaDon(hd);
-            if (!string.IsNullOrEmpty(soHD))
-            {
-                hd.SoHD = soHD;
-                return true;
-            }
-            return false;
+            string soHD = hddl.ThemHoaDon(hd);
+            return soHD;
         }
-
     }
 }

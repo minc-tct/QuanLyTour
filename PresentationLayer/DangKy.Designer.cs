@@ -54,6 +54,9 @@ namespace PresentationLayer
             this.lnkLogin = new System.Windows.Forms.LinkLabel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panelRegister = new System.Windows.Forms.Panel();
+            this.btnGuiMa = new System.Windows.Forms.Button();
+            this.lblMaXacThuc = new System.Windows.Forms.Label();
+            this.txtMaXacThuc = new System.Windows.Forms.TextBox();
             this.lbAddress = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.dtpDateofBirth = new System.Windows.Forms.DateTimePicker();
@@ -70,7 +73,7 @@ namespace PresentationLayer
             // 
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(212, 101);
+            this.txtUsername.Location = new System.Drawing.Point(210, 83);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(270, 25);
             this.txtUsername.TabIndex = 1;
@@ -79,7 +82,7 @@ namespace PresentationLayer
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(212, 142);
+            this.txtPassword.Location = new System.Drawing.Point(210, 124);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(270, 25);
             this.txtPassword.TabIndex = 2;
@@ -89,7 +92,7 @@ namespace PresentationLayer
             // 
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(210, 200);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(208, 182);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(272, 25);
             this.txtConfirmPassword.TabIndex = 3;
@@ -99,7 +102,7 @@ namespace PresentationLayer
             // 
             this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(212, 244);
+            this.txtFullName.Location = new System.Drawing.Point(210, 226);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(269, 25);
             this.txtFullName.TabIndex = 4;
@@ -108,7 +111,7 @@ namespace PresentationLayer
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(210, 360);
+            this.txtEmail.Location = new System.Drawing.Point(208, 342);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(270, 25);
             this.txtEmail.TabIndex = 5;
@@ -117,7 +120,7 @@ namespace PresentationLayer
             // 
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(210, 429);
+            this.txtPhone.Location = new System.Drawing.Point(208, 411);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(270, 25);
             this.txtPhone.TabIndex = 6;
@@ -130,7 +133,7 @@ namespace PresentationLayer
             this.cboUserRole.Items.AddRange(new object[] {
             "Nhân viên",
             "Quản lý"});
-            this.cboUserRole.Location = new System.Drawing.Point(210, 469);
+            this.cboUserRole.Location = new System.Drawing.Point(208, 451);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(270, 33);
             this.cboUserRole.TabIndex = 7;
@@ -141,7 +144,7 @@ namespace PresentationLayer
             this.lbUsername.BackColor = System.Drawing.Color.Transparent;
             this.lbUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.ForeColor = System.Drawing.Color.Linen;
-            this.lbUsername.Location = new System.Drawing.Point(30, 101);
+            this.lbUsername.Location = new System.Drawing.Point(28, 83);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(128, 23);
             this.lbUsername.TabIndex = 10;
@@ -153,7 +156,7 @@ namespace PresentationLayer
             this.lbPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.Color.Linen;
-            this.lbPassword.Location = new System.Drawing.Point(32, 144);
+            this.lbPassword.Location = new System.Drawing.Point(30, 126);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(88, 23);
             this.lbPassword.TabIndex = 11;
@@ -165,7 +168,7 @@ namespace PresentationLayer
             this.lbConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbConfirmPassword.ForeColor = System.Drawing.Color.Linen;
-            this.lbConfirmPassword.Location = new System.Drawing.Point(30, 202);
+            this.lbConfirmPassword.Location = new System.Drawing.Point(28, 184);
             this.lbConfirmPassword.Name = "lbConfirmPassword";
             this.lbConfirmPassword.Size = new System.Drawing.Size(164, 23);
             this.lbConfirmPassword.TabIndex = 12;
@@ -177,7 +180,7 @@ namespace PresentationLayer
             this.lbFullName.BackColor = System.Drawing.Color.Transparent;
             this.lbFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFullName.ForeColor = System.Drawing.Color.Linen;
-            this.lbFullName.Location = new System.Drawing.Point(30, 244);
+            this.lbFullName.Location = new System.Drawing.Point(28, 226);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(90, 23);
             this.lbFullName.TabIndex = 13;
@@ -189,7 +192,7 @@ namespace PresentationLayer
             this.lbEmail.BackColor = System.Drawing.Color.Transparent;
             this.lbEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.ForeColor = System.Drawing.Color.Linen;
-            this.lbEmail.Location = new System.Drawing.Point(32, 362);
+            this.lbEmail.Location = new System.Drawing.Point(30, 344);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(55, 23);
             this.lbEmail.TabIndex = 14;
@@ -201,7 +204,7 @@ namespace PresentationLayer
             this.lbPhone.BackColor = System.Drawing.Color.Transparent;
             this.lbPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.ForeColor = System.Drawing.Color.Linen;
-            this.lbPhone.Location = new System.Drawing.Point(32, 431);
+            this.lbPhone.Location = new System.Drawing.Point(30, 413);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(115, 23);
             this.lbPhone.TabIndex = 15;
@@ -213,7 +216,7 @@ namespace PresentationLayer
             this.lbUserRole.BackColor = System.Drawing.Color.Transparent;
             this.lbUserRole.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserRole.ForeColor = System.Drawing.Color.Linen;
-            this.lbUserRole.Location = new System.Drawing.Point(32, 474);
+            this.lbUserRole.Location = new System.Drawing.Point(30, 456);
             this.lbUserRole.Name = "lbUserRole";
             this.lbUserRole.Size = new System.Drawing.Size(122, 23);
             this.lbUserRole.TabIndex = 16;
@@ -237,7 +240,7 @@ namespace PresentationLayer
             this.chkShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.chkShowPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkShowPassword.ForeColor = System.Drawing.Color.Linen;
-            this.chkShowPassword.Location = new System.Drawing.Point(212, 170);
+            this.chkShowPassword.Location = new System.Drawing.Point(210, 152);
             this.chkShowPassword.Name = "chkShowPassword";
             this.chkShowPassword.Size = new System.Drawing.Size(148, 24);
             this.chkShowPassword.TabIndex = 8;
@@ -253,7 +256,7 @@ namespace PresentationLayer
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(106, 3);
+            this.btnRegister.Location = new System.Drawing.Point(102, 15);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(140, 45);
             this.btnRegister.TabIndex = 17;
@@ -269,7 +272,7 @@ namespace PresentationLayer
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(139)))), ((int)(((byte)(34)))));
-            this.btnCancel.Location = new System.Drawing.Point(276, 3);
+            this.btnCancel.Location = new System.Drawing.Point(286, 15);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 45);
             this.btnCancel.TabIndex = 18;
@@ -304,6 +307,9 @@ namespace PresentationLayer
             // panelRegister
             // 
             this.panelRegister.BackColor = System.Drawing.Color.Transparent;
+            this.panelRegister.Controls.Add(this.btnGuiMa);
+            this.panelRegister.Controls.Add(this.lblMaXacThuc);
+            this.panelRegister.Controls.Add(this.txtMaXacThuc);
             this.panelRegister.Controls.Add(this.lbAddress);
             this.panelRegister.Controls.Add(this.txtAddress);
             this.panelRegister.Controls.Add(this.dtpDateofBirth);
@@ -332,13 +338,45 @@ namespace PresentationLayer
             this.panelRegister.Size = new System.Drawing.Size(515, 622);
             this.panelRegister.TabIndex = 0;
             // 
+            // btnGuiMa
+            // 
+            this.btnGuiMa.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiMa.Location = new System.Drawing.Point(382, 500);
+            this.btnGuiMa.Name = "btnGuiMa";
+            this.btnGuiMa.Size = new System.Drawing.Size(96, 29);
+            this.btnGuiMa.TabIndex = 29;
+            this.btnGuiMa.Text = "Gửi mã";
+            this.btnGuiMa.UseVisualStyleBackColor = true;
+            this.btnGuiMa.Click += new System.EventHandler(this.btnGuiMa_Click);
+            // 
+            // lblMaXacThuc
+            // 
+            this.lblMaXacThuc.AutoSize = true;
+            this.lblMaXacThuc.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaXacThuc.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaXacThuc.ForeColor = System.Drawing.Color.Linen;
+            this.lblMaXacThuc.Location = new System.Drawing.Point(30, 500);
+            this.lblMaXacThuc.Name = "lblMaXacThuc";
+            this.lblMaXacThuc.Size = new System.Drawing.Size(106, 23);
+            this.lblMaXacThuc.TabIndex = 28;
+            this.lblMaXacThuc.Text = "Mã xác thực";
+            // 
+            // txtMaXacThuc
+            // 
+            this.txtMaXacThuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaXacThuc.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaXacThuc.Location = new System.Drawing.Point(208, 498);
+            this.txtMaXacThuc.Name = "txtMaXacThuc";
+            this.txtMaXacThuc.Size = new System.Drawing.Size(125, 25);
+            this.txtMaXacThuc.TabIndex = 27;
+            // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
             this.lbAddress.BackColor = System.Drawing.Color.Transparent;
             this.lbAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddress.ForeColor = System.Drawing.Color.Linen;
-            this.lbAddress.Location = new System.Drawing.Point(32, 395);
+            this.lbAddress.Location = new System.Drawing.Point(30, 377);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(66, 23);
             this.lbAddress.TabIndex = 26;
@@ -348,14 +386,14 @@ namespace PresentationLayer
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(210, 393);
+            this.txtAddress.Location = new System.Drawing.Point(208, 375);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(270, 25);
             this.txtAddress.TabIndex = 25;
             // 
             // dtpDateofBirth
             // 
-            this.dtpDateofBirth.Location = new System.Drawing.Point(210, 323);
+            this.dtpDateofBirth.Location = new System.Drawing.Point(208, 305);
             this.dtpDateofBirth.Name = "dtpDateofBirth";
             this.dtpDateofBirth.Size = new System.Drawing.Size(270, 22);
             this.dtpDateofBirth.TabIndex = 24;
@@ -366,7 +404,7 @@ namespace PresentationLayer
             this.lbDateofBirth.BackColor = System.Drawing.Color.Transparent;
             this.lbDateofBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDateofBirth.ForeColor = System.Drawing.Color.Linen;
-            this.lbDateofBirth.Location = new System.Drawing.Point(30, 326);
+            this.lbDateofBirth.Location = new System.Drawing.Point(28, 308);
             this.lbDateofBirth.Name = "lbDateofBirth";
             this.lbDateofBirth.Size = new System.Drawing.Size(91, 23);
             this.lbDateofBirth.TabIndex = 23;
@@ -379,9 +417,9 @@ namespace PresentationLayer
             this.cboGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cboGender.Location = new System.Drawing.Point(212, 284);
+            this.cboGender.Location = new System.Drawing.Point(210, 266);
             this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(270, 33);
+            this.cboGender.Size = new System.Drawing.Size(270, 24);
             this.cboGender.TabIndex = 22;
             // 
             // lbGender
@@ -390,7 +428,7 @@ namespace PresentationLayer
             this.lbGender.BackColor = System.Drawing.Color.Transparent;
             this.lbGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGender.ForeColor = System.Drawing.Color.Linen;
-            this.lbGender.Location = new System.Drawing.Point(30, 294);
+            this.lbGender.Location = new System.Drawing.Point(28, 276);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(79, 23);
             this.lbGender.TabIndex = 21;
@@ -462,5 +500,8 @@ namespace PresentationLayer
         private Label lbGender;
         private Label lbAddress;
         private TextBox txtAddress;
+        private Label lblMaXacThuc;
+        private TextBox txtMaXacThuc;
+        private Button btnGuiMa;
     }
 }

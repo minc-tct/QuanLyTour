@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoBL.cs" />
     <Compile Include="ChiTietHoaDonBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DangKyBL.cs" />
-    <Compile Include="DatTourBL.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="ToursBL.cs" />
     <Compile Include="DiemDuLichBL.cs" />
     <Compile Include="DiemKhoiHanhBL.cs" />
     <Compile Include="KhachHangBL.cs" />
@@ -57,7 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HoaDonBL.cs" />
     <Compile Include="QuanLyTourBL.cs" />
-    <Compile Include="QuanLyVeBL.cs" />
+    <Compile Include="DatTourBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

@@ -8,12 +8,15 @@ namespace BusinessLayer
 {
     public class ChiTietHoaDonBL
     {
-
-        ChiTietHoaDonDL CTHDdl = new ChiTietHoaDonDL();
-
-        public ChiTietHoaDon LayThongTinChiTiet(string soHD)
+        ChiTietHoaDonDL cthddl;
+        public ChiTietHoaDonBL()
         {
-            return CTHDdl.LayChiTietHoaDon(soHD);
+            cthddl = new ChiTietHoaDonDL();
+        }
+
+        public ChiTietHD LayThongTinChiTiet(string soHD)
+        {
+            return cthddl.LayChiTietHoaDon(soHD);
         }
     }
 }

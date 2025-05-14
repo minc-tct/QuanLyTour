@@ -12,44 +12,56 @@ namespace BusinessLayer
 {
     public class QuanLyTourBL
     {
-        private QuanLyTourDL tourdl;
+        private QuanLyTourDL quanlytourDL;
 
         public QuanLyTourBL()
         {
-            tourdl = new QuanLyTourDL();
+            quanlytourDL = new QuanLyTourDL();
         }
 
         public List<Tour> GetTours()
         {
             try
             {
-                return tourdl.GetTour();
+                return quanlytourDL.GetTours();
             }
             catch (SqlException ex)
             {
                 throw ex;
             }
         }
-        public int SuaTour(Tour tour)
+
+        public bool SuaTour(Tour tour)
         {
-            return tourdl.UpdateTour(tour);
+            return quanlytourDL.UpdateTour(tour);
 
         }
-        public int ThemTour(Tour tour)
+        public string ThemTour(Tour tour)
         {
-            tour.MaTour = tourdl.GenerateMaTour();
             if (string.IsNullOrWhiteSpace(tour.TenTour))
-                throw new ArgumentException("Tên tour không được để trống.");
+                throw new Exception("Tên tour không được để trống.");
 
-            return tourdl.InsertTour(tour);
+            var danhSach = quanlytourDL.GetTours();
+            if (danhSach.Any(t => t.MaTour == tour.MaTour))
+                throw new Exception("Mã tour đã tồn tại.");
+
+            if (tour.TGKetThuc < tour.TGBatDau)
+                throw new Exception("Thời gian kết thúc không được nhỏ hơn thời gian bắt đầu.");
+            return quanlytourDL.InsertTour(tour);
         }
-        public bool KiemTraTourDaDat(string maTour)
+
+        public bool XoaTour(string maTour)
         {
-            return tourdl.IsCheckKH_Tour(maTour); // gọi xuống DL kiểm tra
+            if (quanlytourDL.IsCheckKH_Tour(maTour))
+            {
+                return false; 
+            }
+
+            return quanlytourDL.DeleteTour(maTour);
         }
-        public int XoaTour(string maTour)
+        public string GetNewMaTour()
         {
-            return tourdl.DeleteTour(maTour);
+            return quanlytourDL.GetNewMaTour();
         }
     }
 }

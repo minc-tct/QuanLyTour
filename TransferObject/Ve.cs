@@ -18,7 +18,7 @@ namespace TransferObject
         public decimal ThanhTien { get; set; }  // Mặc định = 0 khi khởi tạo
 
         public Ve(string maTour, string tenTour, string diaDiemXP, string tenPhuongTien,
-                 DateTime tgBatDau, DateTime tgKetThuc,  decimal gia)
+                 DateTime tgBatDau, DateTime tgKetThuc, decimal gia)
         {
             this.MaTour = maTour;
             this.TenTour = tenTour;
@@ -27,7 +27,7 @@ namespace TransferObject
             this.TGBatDau = tgBatDau;
             this.TGKetThuc = tgKetThuc;
             this.Gia = gia;
-            this.ThanhTien = 0; 
+            this.ThanhTien = 0;
         }
 
         public void CapNhatThanhTien(int soLuongVe)

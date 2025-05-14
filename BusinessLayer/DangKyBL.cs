@@ -10,6 +10,7 @@ namespace BusinessLayer
 {
     public class DangKyBL
     {
+        private static Dictionary<string, string> MaXacThucMap = new Dictionary<string, string>();
         private NhanVienDL nvDL = new NhanVienDL();
         private DangKyTKDL tkDL = new DangKyTKDL();
 
@@ -25,6 +26,19 @@ namespace BusinessLayer
                 return tkDL.Insert(acc) > 0;
             }
             return false;
+        }
+        public static string GuiMaXacThuc(string email)
+        {
+            Random rand = new Random();
+            string code = rand.Next(100000, 999999).ToString();
+            MaXacThucMap[email] = code;
+            Email.SendVerificationCode(email, code);
+            return code;
+        }
+
+        public static bool KiemTraMa(string email, string maNhap)
+        {
+            return MaXacThucMap.ContainsKey(email) && MaXacThucMap[email] == maNhap;
         }
     }
 }

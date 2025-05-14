@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,17 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
-using BusinessLayer;
 using TransferObject;
 
 namespace PresentationLayer
 {
-    public partial class QuanLyKhachHang : Form
+    public partial class QuanLyKhachHang: Form
     {
         private KhachHangBL khbl = new KhachHangBL();
-
         public QuanLyKhachHang()
         {
             InitializeComponent();
@@ -52,13 +49,13 @@ namespace PresentationLayer
 
             }
         }
-        private void btnTimKH_Click_1(object sender, EventArgs e)
+
+        private void btnTimKH_Click(object sender, EventArgs e)
         {
             string keyword = txtTimKH.Text.Trim();
             dgvKH.DataSource = khbl.SearchByName(keyword);
         }
-
-        private void btnLamMoi_Click_1(object sender, EventArgs e)
+        private void LamMoi(object sender, EventArgs e)
         {
             txtMaKH.Clear();
             txtTenKH.Clear();
@@ -67,16 +64,8 @@ namespace PresentationLayer
             rdoNam.Checked = false;
             rdoNu.Checked = false;
 
-            // Load lại danh sách KH nếu cần
             dgvKH.DataSource = khbl.GetKhachHangs();
         }
-
-        private void btnTaoMaKH_Click_1(object sender, EventArgs e)
-        {
-            string maMoi = khbl.TaoMaKhachHangMoi();
-            txtMaKH.Text = maMoi;
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             string maKH = txtMaKH.Text.Trim();
@@ -95,52 +84,15 @@ namespace PresentationLayer
                 txtSdt.Text.Trim(),
                 txtEmail.Text.Trim()
             );
-            if (khbl.Sua(kh)>0)
+
+            bool kq = khbl.Sua(kh);
+            if (kq)
             {
                 MessageBox.Show("Cập nhật thành công");
                 dgvKH.DataSource = khbl.GetKhachHangs();
             }
-            else
-            {
-                MessageBox.Show("Không được đổi mã khách hàng ");
-                btnLamMoi_Click_1(sender, e);
-            }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string gioiTinh = rdoNam.Checked ? "Nam" : (rdoNu.Checked ? "Nữ" : null);
-
-                KhachHang kh = new KhachHang
-                {
-                    HoTen = txtTenKH.Text.Trim(),
-                    SDT = txtSdt.Text.Trim(),
-                    Email = txtEmail.Text.Trim(),
-                    GioiTinh = gioiTinh
-                };
-                if (khbl.GetKhachHangs().Any(k => k.MaKH == txtMaKH.Text.Trim()))
-                {
-                    MessageBox.Show("Mã khách hàng đã tồn tại. Vui lòng tạo mã mới.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (khbl.Them(kh)>0)
-                {
-                    MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnLamMoi_Click_1(sender, e);
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string maKH = txtMaKH.Text.Trim();
@@ -151,23 +103,21 @@ namespace PresentationLayer
                 return;
             }
 
-            // Kiểm tra ràng buộc HOÁ ĐƠN (gọi BL)
             if (khbl.KiemTraKhachHangCoHoaDon(maKH))
             {
                 MessageBox.Show("Không thể xóa khách hàng vì đang có hóa đơn.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Xác nhận xóa
             var confirm = MessageBox.Show("Bạn có chắc muốn xóa khách hàng này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                int ketQua = khbl.XoaKhachHang(maKH); // gọi BL xử lý xóa
-                if (ketQua>0)
+                bool ketQua = khbl.XoaKhachHang(maKH); 
+                if (ketQua)
                 {
                     MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvKH.DataSource = khbl.GetKhachHangs();
-                    btnLamMoi_Click_1(sender, e);
+                    LamMoi(sender, e);
                 }
                 else
                 {
@@ -175,8 +125,5 @@ namespace PresentationLayer
                 }
             }
         }
-
-       
     }
 }
-        

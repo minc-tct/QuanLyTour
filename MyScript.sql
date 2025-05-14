@@ -4,7 +4,7 @@ GO
 CREATE PROC uspAddNV
 	@MaNV       CHAR(5),
 	@HoTen      NVARCHAR(100),
-	@GioiTinh   VARCHAR(10),
+	@GioiTinh   NVARCHAR(10),
 	@NgaySinh   DATE,
 	@Email      VARCHAR(100),
 	@DiaChi     NVARCHAR(200),
@@ -14,6 +14,19 @@ AS
 BEGIN
 	INSERT INTO NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,Email,DiaChi,SDT,MaCV)
 		VALUES(@MaNV,@HoTen,@GioiTinh,@NgaySinh,@Email,@DiaChi,@SDT,@MaCV)
+END
+GO
+
+CREATE PROC uspAddKH
+    @MaKH      CHAR(5),
+    @HoTen     NVARCHAR(100),
+    @GioiTinh  NVARCHAR(5),
+    @Sdt       VARCHAR(20),
+    @Email     VARCHAR(255)
+AS
+BEGIN
+    INSERT INTO KHACHHANG(MaKH, HoTen, GioiTinh, Sdt, Email)
+    VALUES(@MaKH, @HoTen, @GioiTinh, @Sdt, @Email)
 END
 GO
 
@@ -31,10 +44,26 @@ CREATE PROCEDURE uspAddTour
     @MaDDL          CHAR(5)
 AS
 BEGIN
-    INSERT INTO THONGTINTHONGTINTOUR (MaTour, TenTour, MoTaTour, AnhTour, GiaTour, 
+    INSERT INTO THONGTINTOUR (MaTour, TenTour, MoTaTour, AnhTour, GiaTour, 
                       TGBatDau, TGKetThuc, MaLoaiTour, MaPhuongTien, MaXP, MaDDL)
     VALUES (@MaTour, @TenTour, @MoTaTour, @AnhTour, @GiaTour, 
             @TGBatDau, @TGKetThuc, @MaLoaiTour, @MaPhuongTien, @MaXP, @MaDDL);
+END
+GO
+
+CREATE PROCEDURE uspAddHoaDon
+    @SoHD        CHAR(5),
+    @MaNV        CHAR(5),
+    @MaKH        CHAR(5),
+    @MaTour      CHAR(4),
+    @SoLuongVe   INT,
+    @NgayDangKy  DATETIME,
+    @NgayLapHD   DATETIME,
+    @ThanhTien   DECIMAL(18, 2)
+AS
+BEGIN
+    INSERT INTO HOADON (SoHD, MaNV, MaKH, MaTour, SoLuongVe, NgayDangKy, NgayLapHD, ThanhTien)
+    VALUES (@SoHD, @MaNV, @MaKH, @MaTour, @SoLuongVe, @NgayDangKy, @NgayLapHD, @ThanhTien)
 END
 GO
 
@@ -70,7 +99,7 @@ GO
 CREATE PROC uspUpdateKH
     @maKH           CHAR(5),
     @hoTen          NVARCHAR(100),
-    @gioiTinh       VARCHAR(5),
+    @gioiTinh       NVARCHAR(5),
     @sdt            VARCHAR(20),
     @email          VARCHAR(255)
 AS
@@ -119,4 +148,27 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE uspDeleteKhachHang
+    @MaKH CHAR(5)
+AS
+BEGIN
+    DELETE FROM KHACHHANG WHERE MaKH = @MaKH
+END
+GO
 
+CREATE PROC uspDeleteTour
+    @MaTour CHAR(4)
+AS
+BEGIN
+    DELETE FROM THONGTINTOUR
+    WHERE MaTour = @MaTour
+END
+GO
+
+CREATE PROCEDURE uspDeleteHoaDon
+    @SoHD CHAR(5)
+AS
+BEGIN
+    DELETE FROM HOADON WHERE SoHD = @SoHD
+END
+GO

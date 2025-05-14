@@ -14,23 +14,22 @@ namespace DataLayer
         public List<KhachHang> GetKhachHang()
         {
 
-            string maKH, hoTen, email, sdt, gioiTinh;
             List<KhachHang> lKhachHang = new List<KhachHang>();
-
             string sql = "SELECT * FROM KHACHHANG";
+
             try
             {
                 Connect();
                 SqlDataReader reader = MyExcuteReader(sql, CommandType.Text);
                 while (reader.Read())
                 {
-                    maKH = reader[0].ToString();
-                    hoTen = reader[1].ToString();
-                    gioiTinh = reader[2].ToString();
-                    sdt = reader[3].ToString();
-                    email = reader[4].ToString();
+                    string maKH = reader["MaKH"].ToString();
+                    string hoTen = reader["HoTen"].ToString();
+                    string gioiTinh = reader["GioiTinh"].ToString();
+                    string sdt = reader["Sdt"].ToString();
+                    string email = reader["Email"].ToString();
 
-                    KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh,sdt, email);
+                    KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, sdt, email);
                     lKhachHang.Add(kh);
                 }
                 reader.Close();
@@ -45,10 +44,11 @@ namespace DataLayer
                 Disconnect();
             }
         }
-        public List<KhachHang> SearchKhachHangByName(string ten)
+        public List<KhachHang> SearchKhachHangByName(string keyword)
         {
             List<KhachHang> list = new List<KhachHang>();
-            string sql = "SELECT * FROM KHACHHANG WHERE HoTen COLLATE SQL_Latin1_General_CP1_CI_AI LIKE '%" + ten + "%'";
+            
+            string sql = "SELECT * FROM KHACHHANG WHERE HoTen LIKE N'%" + keyword + "%'";
 
             try
             {
@@ -59,44 +59,137 @@ namespace DataLayer
                     string maKH = reader["MaKH"].ToString();
                     string hoTen = reader["HoTen"].ToString();
                     string gioiTinh = reader["GioiTinh"].ToString();
-                    string sdt = reader["SDT"].ToString();
+                    string sdt = reader["Sdt"].ToString();
                     string email = reader["Email"].ToString();
 
                     KhachHang kh = new KhachHang(maKH, hoTen, gioiTinh, sdt, email);
                     list.Add(kh);
                 }
                 reader.Close();
-                
             }
             catch (SqlException ex)
             {
-                throw ex; 
+                throw ex;
             }
             finally
             {
                 Disconnect();
             }
+
             return list;
         }
-        public KhachHang TimKhachHangTheoSDT(string sdt)
+        private string GetNewCustomerId()
         {
-            string sql = "SELECT * FROM KHACHHANG WHERE Sdt = '"+sdt+"'";
+            string sql = "SELECT TOP 1 MaKH FROM KHACHHANG WHERE MaKH LIKE 'KH%' ORDER BY MaKH DESC";
             try
             {
                 Connect();
-                SqlDataReader reader = MyExcuteReader(sql, CommandType.Text);
-                if (reader.Read())
+                object result = MyExcuteScalar(sql, CommandType.Text);
+                if (result != null && result != DBNull.Value)
                 {
-                    string maKH = reader["MaKH"].ToString();
-                    string hoTen = reader["HoTen"].ToString();
-                    string gioiTinh = reader["GioiTinh"].ToString();
-                    string email = reader["Email"].ToString();
-
-                    reader.Close();
-                    return new KhachHang(maKH, hoTen, gioiTinh, sdt, email);
+                    string lastMaKH = result.ToString();
+                    int number = int.Parse(lastMaKH.Substring(2));
+                    return "KH" + (number + 1).ToString("D3");
                 }
-                reader.Close();
-                return null;
+                else
+                {
+                    return "KH001";
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public string Insert(KhachHang kh)
+        {
+            string newMaKH = GetNewCustomerId();
+            kh.MaKH = newMaKH;
+
+            string sql = "uspAddKH";
+            List<SqlParameter> parameters = new List<SqlParameter>
+    {
+        new SqlParameter("@MaKH", kh.MaKH),
+        new SqlParameter("@HoTen", kh.HoTen),
+        new SqlParameter("@GioiTinh", kh.GioiTinh),
+        new SqlParameter("@SDT", kh.SDT),
+        new SqlParameter("@Email", kh.Email)
+    };
+
+            try
+            {
+                int rows = MyExecuteNonQuery(sql, CommandType.StoredProcedure, parameters);
+                return rows > 0 ? kh.MaKH : null;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Update(KhachHang kh)
+        {
+            string sql = "uspUpdateKH";
+            List<SqlParameter> parameters = new List<SqlParameter>
+    {
+        new SqlParameter("@MaKH", kh.MaKH),
+        new SqlParameter("@HoTen", kh.HoTen),
+        new SqlParameter("@GioiTinh", kh.GioiTinh),
+        new SqlParameter("@SDT", kh.SDT),
+        new SqlParameter("@Email", kh.Email)
+    };
+            try
+            {
+                int rows = MyExecuteNonQuery(sql, CommandType.StoredProcedure, parameters);
+                return rows > 0; 
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public bool DeleteKhachHang(string maKH)
+        {
+            string sql = "uspDeleteKhachHang";
+            List<SqlParameter> parameters = new List<SqlParameter>
+            {
+                new SqlParameter("@maKH", maKH)
+            };
+
+            try
+            {
+                int result = MyExecuteNonQuery(sql, CommandType.StoredProcedure, parameters);
+                return result > 0;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Lỗi khi xóa khách hàng: " + ex.Message);
+            }
+        }
+
+        public bool KhachHangCoHoaDon(string maKH)
+        {
+            string sql = "SELECT COUNT(*) FROM HoaDon WHERE MaKH = @maKH";
+            List<SqlParameter> parameters = new List<SqlParameter>
+    {
+        new SqlParameter("@maKH", maKH)
+    };
+
+            try
+            {
+                Connect();
+                object result = MyExcuteScalar(sql, CommandType.Text, parameters);
+                int count = Convert.ToInt32(result);
+                return count > 0;
             }
             catch (SqlException ex)
             {
@@ -107,78 +200,5 @@ namespace DataLayer
                 Disconnect();
             }
         }
-        public string GenerateMaKH()
-        {
-            string sql = "SELECT TOP 1 MaKH FROM KHACHHANG WHERE MaKH LIKE 'KH%' ORDER BY MaKH DESC";
-            object result = MyExcuteScalar(sql, CommandType.Text);
-            if (result != null)
-            {
-                string lastMaKH = result.ToString();
-                int number = int.Parse(lastMaKH.Substring(2));
-                return "KH" + (number + 1).ToString("D3");
-            }
-            return "KH000";
-        }
-
-        public int Update(KhachHang kh)
-        {
-            string sql = "uspUpdateKH";
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@maKH", kh.MaKH));
-            parameters.Add(new SqlParameter("@hoTen", kh.HoTen));
-            parameters.Add(new SqlParameter("@sdt", kh.SDT));
-            parameters.Add(new SqlParameter("@email", kh.Email));
-            parameters.Add(new SqlParameter("@gioiTinh", kh.GioiTinh));
-            try
-            {
-                return MyExecuteNonQuery(sql, CommandType.StoredProcedure, parameters);
-            }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
-        }
-        public int Insert(KhachHang kh)
-        {
-            string sql = @"INSERT INTO KHACHHANG (MaKH, HoTen, GioiTinh, Sdt, Email)
-                   VALUES ('"+kh.MaKH+"', '"+kh.HoTen+"','"+kh.GioiTinh+"', '"+kh.SDT+"', '"+kh.Email+"')";
-            try
-            {
-                return MyExecuteNonQuery(sql, CommandType.Text);
-            }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
-        }
-        public int DeleteKhachHang(string maKH)
-        {
-            string sql = "DELETE FROM KHACHHANG WHERE MaKH = '"+maKH+"'";
-            try
-            {
-                return MyExecuteNonQuery(sql, CommandType.Text);
-            }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
-        }
-
-        public bool KiemTraKhachHangCoHoaDon(string maKH)
-        {
-            string sql = "SELECT COUNT(*) FROM HOADON WHERE MaKH = '"+maKH+"'";
-            try
-            {
-                object result = MyExcuteScalar(sql, CommandType.Text);
-                int count = result != null ? Convert.ToInt32(result) : 0;
-
-                return count > 0;
-            }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
-        }
-
     }
 }

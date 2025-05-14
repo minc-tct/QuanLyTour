@@ -22,8 +22,11 @@ namespace PresentationLayer
             this.tenDangNhap = tenDangNhap;
         }
 
-        private void QuanLyNhanVien_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
+            // Gắn lại vị trí của grBoxNV theo vị trí của dgvNhanVien
+            grBoxNV.Top = dgvNhanVien.Bottom + 10;
+            grBoxNV.Left = (this.ClientSize.Width - grBoxNV.Width) / 2;
             try
             {
                 dgvNhanVien.DataSource = nvbl.GetNhanViens();
@@ -34,7 +37,7 @@ namespace PresentationLayer
             }
         }
 
-        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
 
@@ -50,6 +53,7 @@ namespace PresentationLayer
                 cbCviec.SelectedItem = dgvNhanVien.Rows[i].Cells["MaCV"].Value.ToString();
             }
         }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
@@ -63,7 +67,7 @@ namespace PresentationLayer
                     Email = txtEmail.Text.Trim(),
                     DiaChi = txtDiaChi.Text.Trim(),
                     SDT = txtSDT.Text.Trim(),
-                    MaCV=cbCviec.Text.Trim()
+                    MaCV = cbCviec.Text.Trim()
                 };
 
                 if (nvbl.CapNhat(nv) > 0)
@@ -86,8 +90,8 @@ namespace PresentationLayer
         {
             txtMaNV.Clear();
             txtHoTen.Clear();
-            cboGioiTinh.SelectedItem=-1;
-            dtpNgaySinh.Value=DateTime.Now;
+            cboGioiTinh.SelectedItem = -1;
+            dtpNgaySinh.Value = DateTime.Now;
             txtEmail.Clear();
             txtDiaChi.Clear();
             txtSDT.Clear();

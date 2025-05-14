@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using System.Data.SqlClient;
 using DataLayer;
 using TransferObject;
@@ -12,38 +8,23 @@ namespace BusinessLayer
 {
     public class DatTourBL
     {
-        private DatTourDL tourdl;
+        private DatTourDL dtdl = new DatTourDL();
 
         public DatTourBL()
         {
-            tourdl = new DatTourDL();
+            dtdl = new DatTourDL();
         }
 
-        public List<Tour> GetTours()
+        public Ve LayThongTinTour(string maTour)
         {
-            try
-            {
-                return tourdl.GetTour();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
+            return dtdl.LayThongTinTour(maTour);
         }
-        public List<Tour> SearchTourByName(string keyword)
+
+
+        public decimal TinhThanhTien(Ve ve, int soLuongVe)
         {
-            try
-            {
-                return tourdl.SearchTourByName(keyword);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-        }
-        public List<Tour> GetTourByType(string tourType)
-        {
-            return tourdl.GetTourByType(tourType); // Trả về danh sách tour theo loại
+            ve.CapNhatThanhTien(soLuongVe);
+            return ve.ThanhTien;
         }
     }
 }

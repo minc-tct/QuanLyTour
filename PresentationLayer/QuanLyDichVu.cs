@@ -34,6 +34,8 @@ namespace PresentationLayer
             diemkhbl = new DiemKhoiHanhBL();
             ptientourbl = new PhuongTienTourBL();
             diemdlbl = new DiemDuLichBL();
+            if (dgvDiemDuLich.Columns.Contains("MaLoaiTour"))
+                dgvDiemDuLich.Columns["MaLoaiTour"].Visible = false;
 
             LoadLoaiTourComboBox();
         }
@@ -83,7 +85,6 @@ namespace PresentationLayer
                 txtMaDiemKhoiHanh.Text = row.Cells[0].Value.ToString();
             }
         }
-
         private void btnUpdateKH_Click(object sender, EventArgs e)
         {
             try
@@ -109,7 +110,6 @@ namespace PresentationLayer
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }   
-
         private void btnDeleteKH_Click(object sender, EventArgs e)
         {
             if (txtMaDiemKhoiHanh.Text == "")
@@ -261,7 +261,8 @@ namespace PresentationLayer
                 DataGridViewRow row = dgvDiemDuLich.Rows[e.RowIndex];
                 txtMaDiemDuLich.Text = row.Cells[0].Value.ToString();
                 txtTenDiemDen.Text = row.Cells[1].Value.ToString();
-                cmbLoaiTourDL.SelectedItem = dgvDiemDuLich.Rows[2].Cells["MaLoaiTour"].Value.ToString();
+                string maLoaiTour = row.Cells["MaLoaiTour"].Value.ToString();
+                cmbLoaiTourDL.SelectedValue = maLoaiTour;
             }
         }
 

@@ -69,6 +69,23 @@ namespace DataLayer
                 throw ex;
             }
         }
+        public string GetMaNVByTenDangNhap(string tenDangNhap)
+        {
+            string sql = @"SELECT nv.MaNV
+                   FROM NhanVien nv 
+                   JOIN TaiKhoan tk ON nv.MaNV = tk.MaNV 
+                   WHERE tk.TenDangNhap = '" + tenDangNhap + "'";
+
+            try
+            {
+                object result = MyExcuteScalar(sql, CommandType.Text);
+                return result?.ToString();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public string GetHoTenByTenDangNhap(string tenDangNhap)
         {
             string sql = @"SELECT nv.HoTen 

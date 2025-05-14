@@ -97,7 +97,7 @@ namespace PresentationLayer
             this.pnlDiemKhoiHanh.Controls.Add(this.pnlDiemKhoiHanhButtons);
             this.pnlDiemKhoiHanh.Location = new System.Drawing.Point(31, 36);
             this.pnlDiemKhoiHanh.Name = "pnlDiemKhoiHanh";
-            this.pnlDiemKhoiHanh.Size = new System.Drawing.Size(1520, 216);
+            this.pnlDiemKhoiHanh.Size = new System.Drawing.Size(1267, 216);
             this.pnlDiemKhoiHanh.TabIndex = 0;
             // 
             // lblMaDiemKhoiHanh
@@ -145,25 +145,26 @@ namespace PresentationLayer
             this.dgvDiemKhoiHanh.ReadOnly = true;
             this.dgvDiemKhoiHanh.RowHeadersWidth = 51;
             this.dgvDiemKhoiHanh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiemKhoiHanh.Size = new System.Drawing.Size(1216, 178);
+            this.dgvDiemKhoiHanh.Size = new System.Drawing.Size(949, 178);
             this.dgvDiemKhoiHanh.TabIndex = 3;
             this.dgvDiemKhoiHanh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiemKhoiHanh_CellContentClick);
             // 
             // pnlDiemKhoiHanhHeader
             // 
-            this.pnlDiemKhoiHanhHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.pnlDiemKhoiHanhHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
             this.pnlDiemKhoiHanhHeader.Controls.Add(this.lblDiemKhoiHanh);
             this.pnlDiemKhoiHanhHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDiemKhoiHanhHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             this.pnlDiemKhoiHanhHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlDiemKhoiHanhHeader.Name = "pnlDiemKhoiHanhHeader";
-            this.pnlDiemKhoiHanhHeader.Size = new System.Drawing.Size(1518, 30);
+            this.pnlDiemKhoiHanhHeader.Size = new System.Drawing.Size(1265, 30);
             this.pnlDiemKhoiHanhHeader.TabIndex = 0;
             // 
             // lblDiemKhoiHanh
             // 
             this.lblDiemKhoiHanh.AutoSize = true;
             this.lblDiemKhoiHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemKhoiHanh.ForeColor = System.Drawing.Color.White;
+            this.lblDiemKhoiHanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.lblDiemKhoiHanh.Location = new System.Drawing.Point(5, 5);
             this.lblDiemKhoiHanh.Name = "lblDiemKhoiHanh";
             this.lblDiemKhoiHanh.Size = new System.Drawing.Size(190, 25);
@@ -183,8 +184,8 @@ namespace PresentationLayer
             // 
             // btnAddKH
             // 
-            this.btnAddKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnAddKH.ForeColor = System.Drawing.Color.White;
+            this.btnAddKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(227)))), ((int)(((byte)(186)))));
+            this.btnAddKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnAddKH.Location = new System.Drawing.Point(5, 6);
             this.btnAddKH.Name = "btnAddKH";
             this.btnAddKH.Size = new System.Drawing.Size(60, 23);
@@ -195,8 +196,8 @@ namespace PresentationLayer
             // 
             // btnUpdateKH
             // 
-            this.btnUpdateKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnUpdateKH.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(174)))));
+            this.btnUpdateKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnUpdateKH.Location = new System.Drawing.Point(71, 6);
             this.btnUpdateKH.Name = "btnUpdateKH";
             this.btnUpdateKH.Size = new System.Drawing.Size(60, 23);
@@ -207,8 +208,8 @@ namespace PresentationLayer
             // 
             // btnDeleteKH
             // 
-            this.btnDeleteKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnDeleteKH.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(186)))));
+            this.btnDeleteKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnDeleteKH.Location = new System.Drawing.Point(137, 6);
             this.btnDeleteKH.Name = "btnDeleteKH";
             this.btnDeleteKH.Size = new System.Drawing.Size(60, 23);
@@ -219,8 +220,8 @@ namespace PresentationLayer
             // 
             // btnRefreshKH
             // 
-            this.btnRefreshKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnRefreshKH.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.btnRefreshKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnRefreshKH.Location = new System.Drawing.Point(203, 6);
             this.btnRefreshKH.Name = "btnRefreshKH";
             this.btnRefreshKH.Size = new System.Drawing.Size(60, 23);
@@ -243,7 +244,7 @@ namespace PresentationLayer
             this.pnlDiemDuLich.Controls.Add(this.pnlDiemDuLichButtons);
             this.pnlDiemDuLich.Location = new System.Drawing.Point(31, 278);
             this.pnlDiemDuLich.Name = "pnlDiemDuLich";
-            this.pnlDiemDuLich.Size = new System.Drawing.Size(1520, 206);
+            this.pnlDiemDuLich.Size = new System.Drawing.Size(1267, 206);
             this.pnlDiemDuLich.TabIndex = 1;
             // 
             // dgvDiemDuLich
@@ -258,7 +259,7 @@ namespace PresentationLayer
             this.dgvDiemDuLich.ReadOnly = true;
             this.dgvDiemDuLich.RowHeadersWidth = 51;
             this.dgvDiemDuLich.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiemDuLich.Size = new System.Drawing.Size(1216, 169);
+            this.dgvDiemDuLich.Size = new System.Drawing.Size(950, 169);
             this.dgvDiemDuLich.TabIndex = 12;
             this.dgvDiemDuLich.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiemDuLich_CellContentClick);
             // 
@@ -315,19 +316,20 @@ namespace PresentationLayer
             // 
             // pnlDiemDuLichHeader
             // 
-            this.pnlDiemDuLichHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.pnlDiemDuLichHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
             this.pnlDiemDuLichHeader.Controls.Add(this.lblDiemDuLich);
             this.pnlDiemDuLichHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDiemDuLichHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             this.pnlDiemDuLichHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlDiemDuLichHeader.Name = "pnlDiemDuLichHeader";
-            this.pnlDiemDuLichHeader.Size = new System.Drawing.Size(1518, 30);
+            this.pnlDiemDuLichHeader.Size = new System.Drawing.Size(1265, 30);
             this.pnlDiemDuLichHeader.TabIndex = 0;
             // 
             // lblDiemDuLich
             // 
             this.lblDiemDuLich.AutoSize = true;
             this.lblDiemDuLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemDuLich.ForeColor = System.Drawing.Color.White;
+            this.lblDiemDuLich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.lblDiemDuLich.Location = new System.Drawing.Point(5, 5);
             this.lblDiemDuLich.Name = "lblDiemDuLich";
             this.lblDiemDuLich.Size = new System.Drawing.Size(156, 25);
@@ -347,8 +349,8 @@ namespace PresentationLayer
             // 
             // btnThemDL
             // 
-            this.btnThemDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnThemDL.ForeColor = System.Drawing.Color.White;
+            this.btnThemDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(227)))), ((int)(((byte)(186)))));
+            this.btnThemDL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnThemDL.Location = new System.Drawing.Point(8, 6);
             this.btnThemDL.Name = "btnThemDL";
             this.btnThemDL.Size = new System.Drawing.Size(60, 23);
@@ -359,8 +361,8 @@ namespace PresentationLayer
             // 
             // btnSuaDL
             // 
-            this.btnSuaDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSuaDL.ForeColor = System.Drawing.Color.White;
+            this.btnSuaDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(174)))));
+            this.btnSuaDL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnSuaDL.Location = new System.Drawing.Point(72, 6);
             this.btnSuaDL.Name = "btnSuaDL";
             this.btnSuaDL.Size = new System.Drawing.Size(60, 23);
@@ -371,8 +373,8 @@ namespace PresentationLayer
             // 
             // btnXoaDL
             // 
-            this.btnXoaDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoaDL.ForeColor = System.Drawing.Color.White;
+            this.btnXoaDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(186)))));
+            this.btnXoaDL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnXoaDL.Location = new System.Drawing.Point(133, 6);
             this.btnXoaDL.Name = "btnXoaDL";
             this.btnXoaDL.Size = new System.Drawing.Size(60, 23);
@@ -383,8 +385,8 @@ namespace PresentationLayer
             // 
             // btnRefreshDL
             // 
-            this.btnRefreshDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnRefreshDL.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.btnRefreshDL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnRefreshDL.Location = new System.Drawing.Point(202, 6);
             this.btnRefreshDL.Name = "btnRefreshDL";
             this.btnRefreshDL.Size = new System.Drawing.Size(60, 23);
@@ -405,7 +407,7 @@ namespace PresentationLayer
             this.pnlPhuongTien.Controls.Add(this.pnlPhuongTienButtons);
             this.pnlPhuongTien.Location = new System.Drawing.Point(31, 512);
             this.pnlPhuongTien.Name = "pnlPhuongTien";
-            this.pnlPhuongTien.Size = new System.Drawing.Size(1519, 206);
+            this.pnlPhuongTien.Size = new System.Drawing.Size(1267, 206);
             this.pnlPhuongTien.TabIndex = 2;
             // 
             // lblMaPhuongTien
@@ -453,25 +455,26 @@ namespace PresentationLayer
             this.dgvPhuongTien.ReadOnly = true;
             this.dgvPhuongTien.RowHeadersWidth = 51;
             this.dgvPhuongTien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhuongTien.Size = new System.Drawing.Size(1211, 173);
+            this.dgvPhuongTien.Size = new System.Drawing.Size(948, 173);
             this.dgvPhuongTien.TabIndex = 3;
             this.dgvPhuongTien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuongTien_CellContentClick);
             // 
             // pnlPhuongTienHeader
             // 
-            this.pnlPhuongTienHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlPhuongTienHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
             this.pnlPhuongTienHeader.Controls.Add(this.lblPhuongTien);
             this.pnlPhuongTienHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPhuongTienHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             this.pnlPhuongTienHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlPhuongTienHeader.Name = "pnlPhuongTienHeader";
-            this.pnlPhuongTienHeader.Size = new System.Drawing.Size(1517, 30);
+            this.pnlPhuongTienHeader.Size = new System.Drawing.Size(1265, 30);
             this.pnlPhuongTienHeader.TabIndex = 0;
             // 
             // lblPhuongTien
             // 
             this.lblPhuongTien.AutoSize = true;
             this.lblPhuongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhuongTien.ForeColor = System.Drawing.Color.White;
+            this.lblPhuongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.lblPhuongTien.Location = new System.Drawing.Point(5, 5);
             this.lblPhuongTien.Name = "lblPhuongTien";
             this.lblPhuongTien.Size = new System.Drawing.Size(159, 25);
@@ -491,8 +494,8 @@ namespace PresentationLayer
             // 
             // btnThemPT
             // 
-            this.btnThemPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnThemPT.ForeColor = System.Drawing.Color.White;
+            this.btnThemPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(227)))), ((int)(((byte)(186)))));
+            this.btnThemPT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnThemPT.Location = new System.Drawing.Point(6, 3);
             this.btnThemPT.Name = "btnThemPT";
             this.btnThemPT.Size = new System.Drawing.Size(60, 23);
@@ -503,8 +506,8 @@ namespace PresentationLayer
             // 
             // btnSuaPT
             // 
-            this.btnSuaPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSuaPT.ForeColor = System.Drawing.Color.White;
+            this.btnSuaPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(174)))));
+            this.btnSuaPT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnSuaPT.Location = new System.Drawing.Point(69, 3);
             this.btnSuaPT.Name = "btnSuaPT";
             this.btnSuaPT.Size = new System.Drawing.Size(60, 23);
@@ -515,8 +518,8 @@ namespace PresentationLayer
             // 
             // btnXoaPT
             // 
-            this.btnXoaPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnXoaPT.ForeColor = System.Drawing.Color.White;
+            this.btnXoaPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(186)))));
+            this.btnXoaPT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnXoaPT.Location = new System.Drawing.Point(133, 3);
             this.btnXoaPT.Name = "btnXoaPT";
             this.btnXoaPT.Size = new System.Drawing.Size(60, 23);
@@ -527,8 +530,8 @@ namespace PresentationLayer
             // 
             // btnRefreshPT
             // 
-            this.btnRefreshPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRefreshPT.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.btnRefreshPT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnRefreshPT.Location = new System.Drawing.Point(199, 3);
             this.btnRefreshPT.Name = "btnRefreshPT";
             this.btnRefreshPT.Size = new System.Drawing.Size(60, 23);
@@ -541,11 +544,12 @@ namespace PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1600, 747);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1310, 726);
             this.Controls.Add(this.pnlDiemKhoiHanh);
             this.Controls.Add(this.pnlDiemDuLich);
             this.Controls.Add(this.pnlPhuongTien);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyDichVu";
             this.Text = "Quản lý Tour";

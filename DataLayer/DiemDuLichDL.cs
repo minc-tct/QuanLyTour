@@ -13,9 +13,9 @@ namespace DataLayer
     {
         public List<DiemDuLich> GetDiemDuLich()
         {
-            string ma, ten, loai;
+            string ma, ten, loai,maLoai;
             List<DiemDuLich> ddl = new List<DiemDuLich>();
-            string sql = "SELECT MaDDL,TenDDL, t.TenLoaiTour FROM DIEMDULICH d, LOAITOUR t WHERE d.MaLoaiTour=t.MaLoaiTour";
+            string sql = "SELECT d.MaDDL, d.TenDDL, d.MaLoaiTour, t.TenLoaiTour FROM DIEMDULICH d, LOAITOUR t WHERE d.MaLoaiTour=t.MaLoaiTour";
             try
             {
                 Connect();
@@ -24,9 +24,10 @@ namespace DataLayer
                 {
                     ma = reader[0].ToString();
                     ten = reader[1].ToString();
-                    loai = reader[2].ToString();
+                    maLoai = reader[2].ToString();
+                    loai = reader[3].ToString();
 
-                    DiemDuLich duLich = new DiemDuLich(ma, ten, loai);
+                    DiemDuLich duLich = new DiemDuLich(ma, ten,maLoai, loai);
                     ddl.Add(duLich);
                 }
                 reader.Close();

@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class ChiTietHD
+    partial class ChiTietHoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChiTietHD));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChiTietHoaDon));
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbThanhTien = new System.Windows.Forms.Label();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.lbHoaDonThanhToan = new System.Windows.Forms.Label();
             this.lbNgayDi = new System.Windows.Forms.Label();
-            // Khởi tạo PrintDocument nếu chưa
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-
-            // Đăng ký sự kiện PrintPage
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             this.lbSoHDon = new System.Windows.Forms.Label();
             this.lbNgayKetThuc = new System.Windows.Forms.Label();
             this.lbNgayKT = new System.Windows.Forms.Label();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.lbSoVe = new System.Windows.Forms.Label();
             this.lbNgayBatDau = new System.Windows.Forms.Label();
             this.lBTenKhachHang = new System.Windows.Forms.Label();
             this.lbSoV = new System.Windows.Forms.Label();
-            this.lbTenNhanVien = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
             this.lbTenKH = new System.Windows.Forms.Label();
             this.lbTenT = new System.Windows.Forms.Label();
@@ -60,9 +53,10 @@
             this.lbPT = new System.Windows.Forms.Label();
             this.lbDiemXP = new System.Windows.Forms.Label();
             this.lbNgayLapHD = new System.Windows.Forms.Label();
-            this.lbTenNV = new System.Windows.Forms.Label();
             this.lbNgayLap = new System.Windows.Forms.Label();
             this.lbSoHD = new System.Windows.Forms.Label();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -124,7 +118,7 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(312, 660);
+            this.btnThoat.Location = new System.Drawing.Point(303, 646);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(171, 49);
@@ -133,26 +127,13 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(-5, 172);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(780, 20);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" +
-    " - - - - - - - - - - - - - - - - - - - - - - - - - - - - --";
-            // 
             // lbHoaDonThanhToan
             // 
             this.lbHoaDonThanhToan.AutoSize = true;
             this.lbHoaDonThanhToan.BackColor = System.Drawing.Color.White;
             this.lbHoaDonThanhToan.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbHoaDonThanhToan.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbHoaDonThanhToan.Location = new System.Drawing.Point(165, 60);
+            this.lbHoaDonThanhToan.Location = new System.Drawing.Point(145, 62);
             this.lbHoaDonThanhToan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoaDonThanhToan.Name = "lbHoaDonThanhToan";
             this.lbHoaDonThanhToan.Size = new System.Drawing.Size(462, 53);
@@ -171,12 +152,16 @@
             this.lbNgayDi.TabIndex = 52;
             this.lbNgayDi.Text = "Ngày đi";
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // lbSoHDon
             // 
             this.lbSoHDon.AutoSize = true;
             this.lbSoHDon.BackColor = System.Drawing.Color.White;
             this.lbSoHDon.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbSoHDon.Location = new System.Drawing.Point(94, 241);
+            this.lbSoHDon.Location = new System.Drawing.Point(94, 192);
             this.lbSoHDon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoHDon.Name = "lbSoHDon";
             this.lbSoHDon.Size = new System.Drawing.Size(133, 25);
@@ -207,17 +192,6 @@
             this.lbNgayKT.TabIndex = 50;
             this.lbNgayKT.Text = "Ngày kết thúc";
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // lbSoVe
             // 
             this.lbSoVe.AutoSize = true;
@@ -247,7 +221,7 @@
             this.lBTenKhachHang.AutoSize = true;
             this.lBTenKhachHang.BackColor = System.Drawing.Color.White;
             this.lBTenKhachHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lBTenKhachHang.Location = new System.Drawing.Point(93, 205);
+            this.lBTenKhachHang.Location = new System.Drawing.Point(93, 234);
             this.lBTenKhachHang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lBTenKhachHang.Name = "lBTenKhachHang";
             this.lBTenKhachHang.Size = new System.Drawing.Size(187, 25);
@@ -266,18 +240,6 @@
             this.lbSoV.TabIndex = 53;
             this.lbSoV.Text = "Số vé:";
             // 
-            // lbTenNhanVien
-            // 
-            this.lbTenNhanVien.AutoSize = true;
-            this.lbTenNhanVien.BackColor = System.Drawing.Color.White;
-            this.lbTenNhanVien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTenNhanVien.Location = new System.Drawing.Point(373, 147);
-            this.lbTenNhanVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTenNhanVien.Name = "lbTenNhanVien";
-            this.lbTenNhanVien.Size = new System.Drawing.Size(160, 25);
-            this.lbTenNhanVien.TabIndex = 36;
-            this.lbTenNhanVien.Text = "Tên nhân viên:";
-            // 
             // btnIn
             // 
             this.btnIn.BackColor = System.Drawing.Color.Chocolate;
@@ -285,7 +247,7 @@
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.White;
-            this.btnIn.Location = new System.Drawing.Point(121, 660);
+            this.btnIn.Location = new System.Drawing.Point(99, 646);
             this.btnIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(169, 49);
@@ -299,7 +261,7 @@
             this.lbTenKH.AutoSize = true;
             this.lbTenKH.BackColor = System.Drawing.Color.White;
             this.lbTenKH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTenKH.Location = new System.Drawing.Point(322, 204);
+            this.lbTenKH.Location = new System.Drawing.Point(322, 234);
             this.lbTenKH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTenKH.Name = "lbTenKH";
             this.lbTenKH.Size = new System.Drawing.Size(161, 26);
@@ -390,18 +352,6 @@
             this.lbNgayLapHD.TabIndex = 37;
             this.lbNgayLapHD.Text = "Ngày lập hóa đơn:";
             // 
-            // lbTenNV
-            // 
-            this.lbTenNV.AutoSize = true;
-            this.lbTenNV.BackColor = System.Drawing.Color.White;
-            this.lbTenNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTenNV.Location = new System.Drawing.Point(558, 146);
-            this.lbTenNV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTenNV.Name = "lbTenNV";
-            this.lbTenNV.Size = new System.Drawing.Size(146, 26);
-            this.lbTenNV.TabIndex = 40;
-            this.lbTenNV.Text = "Tên nhân viên";
-            // 
             // lbNgayLap
             // 
             this.lbNgayLap.AutoSize = true;
@@ -419,20 +369,44 @@
             this.lbSoHD.AutoSize = true;
             this.lbSoHD.BackColor = System.Drawing.Color.White;
             this.lbSoHD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbSoHD.Location = new System.Drawing.Point(322, 240);
+            this.lbSoHD.Location = new System.Drawing.Point(322, 192);
             this.lbSoHD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoHD.Name = "lbSoHD";
             this.lbSoHD.Size = new System.Drawing.Size(74, 26);
             this.lbSoHD.TabIndex = 39;
             this.lbSoHD.Text = "Số HD";
             // 
-            // ChiTietHD
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(-7, 158);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(780, 20);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" +
+    " - - - - - - - - - - - - - - - - - - - - - - - - - - - - --";
+            // 
+            // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(776, 773);
+            this.ClientSize = new System.Drawing.Size(677, 773);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbThanhTien);
@@ -448,7 +422,6 @@
             this.Controls.Add(this.lbNgayBatDau);
             this.Controls.Add(this.lBTenKhachHang);
             this.Controls.Add(this.lbSoV);
-            this.Controls.Add(this.lbTenNhanVien);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.lbTenKH);
             this.Controls.Add(this.lbTenT);
@@ -458,12 +431,12 @@
             this.Controls.Add(this.lbPT);
             this.Controls.Add(this.lbDiemXP);
             this.Controls.Add(this.lbNgayLapHD);
-            this.Controls.Add(this.lbTenNV);
             this.Controls.Add(this.lbNgayLap);
             this.Controls.Add(this.lbSoHD);
-            this.Name = "ChiTietHD";
+            this.Name = "ChiTietHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChiTietHoaDon";
-            this.Load += new System.EventHandler(this.ChiTietHD_Load);
+            this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,19 +449,16 @@
         private System.Windows.Forms.Label lbThanhTien;
         private System.Windows.Forms.Label lbTongTien;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbHoaDonThanhToan;
         private System.Windows.Forms.Label lbNgayDi;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Label lbSoHDon;
         private System.Windows.Forms.Label lbNgayKetThuc;
         private System.Windows.Forms.Label lbNgayKT;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label lbSoVe;
         private System.Windows.Forms.Label lbNgayBatDau;
         private System.Windows.Forms.Label lBTenKhachHang;
         private System.Windows.Forms.Label lbSoV;
-        private System.Windows.Forms.Label lbTenNhanVien;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Label lbTenKH;
         private System.Windows.Forms.Label lbTenT;
@@ -498,8 +468,9 @@
         private System.Windows.Forms.Label lbPT;
         private System.Windows.Forms.Label lbDiemXP;
         private System.Windows.Forms.Label lbNgayLapHD;
-        private System.Windows.Forms.Label lbTenNV;
         private System.Windows.Forms.Label lbNgayLap;
         private System.Windows.Forms.Label lbSoHD;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -11,14 +11,16 @@ namespace TransferObject.DichVu
         public string MaDDL { get; set; }
         public string TenDDL { get; set; }
         public string MaLoaiTour { get; set; }
-
-        public DiemDuLich(string maDDL, string tenDDL, string maLoaiTour)
-        {
-            this.MaDDL = maDDL;
-            this.TenDDL = tenDDL;
-            this.MaLoaiTour = maLoaiTour;
-        }
+        public string TenLoaiTour { get; set; }
 
         public DiemDuLich() { }
+
+        public DiemDuLich(string ma, string ten, string maLoai, string tenLoai)
+        {
+            MaDDL = ma;
+            TenDDL = ten;
+            MaLoaiTour = maLoai;
+            TenLoaiTour = tenLoai;
+        }
     }
 }

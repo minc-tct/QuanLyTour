@@ -42,23 +42,12 @@ namespace BusinessLayer
                 throw ex;
             }
         }
-        public KhachHang TimKhachHangTheoSDT(string sdt)
+        public bool Sua(KhachHang kh)
         {
-            return khdl.TimKhachHangTheoSDT(sdt);
+            return khdl.Update(kh);
         }
-        public string TaoMaKhachHangMoi()
+        public string Them(KhachHang kh)
         {
-            return khdl.GenerateMaKH(); // Gọi từ DataLayer
-        }
-        public int Sua(KhachHang kh)
-        {
-            
-                return khdl.Update(kh);
-            
-        }
-        public int Them(KhachHang kh)
-        {
-            kh.MaKH = khdl.GenerateMaKH();
             if (string.IsNullOrWhiteSpace(kh.HoTen))
                 throw new ArgumentException("Tên khách hàng không được để trống.");
 
@@ -66,13 +55,12 @@ namespace BusinessLayer
         }
         public bool KiemTraKhachHangCoHoaDon(string maKH)
         {
-            return khdl.KiemTraKhachHangCoHoaDon(maKH); // gọi xuống DL kiểm tra
+            return khdl.KhachHangCoHoaDon(maKH);
         }
-        public int XoaKhachHang(string maKH)
+        public bool XoaKhachHang(string maKH)
         {
             return khdl.DeleteKhachHang(maKH);
         }
-
     }
 
 }

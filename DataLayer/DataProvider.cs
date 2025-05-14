@@ -68,28 +68,7 @@ namespace DataLayer
                 Disconnect();
             }
         }
-        //public object MyExcuteScalar(string sql, SqlParameter[] parameters)
-        //{
-        //    try
-        //    {
-        //        Connect();
-        //        SqlCommand cmd = new SqlCommand(sql, cn);
-        //        cmd.CommandType = CommandType.Text;
-
-        //        if (parameters != null && parameters.Length > 0) 
-        //            cmd.Parameters.AddRange(parameters);
-
-        //        return cmd.ExecuteScalar();
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        Disconnect();
-        //    }
-        //}
+       
         public int MyExecuteNonQuery(string sql, CommandType type, List<SqlParameter> parameters=null)
         {
             try
@@ -128,25 +107,30 @@ namespace DataLayer
                 throw ex;
             }
         }
-        //public SqlDataReader MyExcuteReader(string sql, SqlParameter[] parameters)
-        //{
-        //    SqlCommand cmd = new SqlCommand(sql, cn);
-        //    cmd.CommandType = CommandType.Text;
+        public DataTable MyDataTable(string sql, CommandType type, List<SqlParameter> parameters = null)
+        {
+            try
+            {
+                Connect();
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.CommandType = type;
+                if (parameters != null)
+                    foreach (var parameter in parameters)
+                        cmd.Parameters.Add(parameter);
 
-        //    if (parameters != null && parameters.Length > 0)
-        //        cmd.Parameters.AddRange(parameters);
-
-        //    try
-        //    {
-        //        if (cn.State != ConnectionState.Open)
-        //            Connect(); // Đảm bảo mở kết nối
-
-        //        return cmd.ExecuteReader(CommandBehavior.CloseConnection); // Close connection sau khi đọc xong
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
     }
 }

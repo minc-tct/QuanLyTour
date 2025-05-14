@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TransferObject
 {
-    public class ChiTietHoaDon
+    public class ChiTietHD
     {
         public string SoHD { get; set; }
         public string TenNV { get; set; }
@@ -21,7 +21,7 @@ namespace TransferObject
         public DateTime TGKetThuc { get; set; }
         public int SLVeConLai { get; set; }
 
-        public ChiTietHoaDon(string soHD, string tenNV, string tenKH, DateTime ngayLap,
+        public ChiTietHD(string soHD, string tenNV, string tenKH, DateTime ngayLap,
                                 int slVe, decimal thanhTien, string tenTour, string diemXP,
                                 string tenPT, DateTime tgBD, DateTime tgKT, int slVeConLai)
         {
@@ -38,6 +38,6 @@ namespace TransferObject
             this.TGKetThuc = tgKT;
             this.SLVeConLai = slVeConLai;
         }
-        public ChiTietHoaDon() { }
+        public ChiTietHD() { }
     }
 }

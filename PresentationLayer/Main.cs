@@ -55,7 +55,7 @@ namespace PresentationLayer
         }
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TrangChu());
+            OpenChildForm(new TrangChu(tenDangNhap));
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace PresentationLayer
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new TrangChu());
+            OpenChildForm(new TrangChu(tenDangNhap));
             NhanVienBL nvbl = new NhanVienBL();
             string hoTen = nvbl.LayHoTenTheoTenDangNhap(tenDangNhap);
             lblUserInfo.Text = $"Xin chào, {hoTen}";
@@ -106,10 +106,23 @@ namespace PresentationLayer
             OpenChildForm(new QuanLyHoaDon());
         }
 
-        private void btnDatTour_Click(object sender, EventArgs e)
+        private void btnTour_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new DatTour());
+            OpenChildForm(new Tours(tenDangNhap));
         }
 
+        private void btnTke_Click(object sender, EventArgs e)
+        {
+            NhanVienBL nvbl = new NhanVienBL();
+            string maCVu = nvbl.LayChucVuTheoTenDangNhap(tenDangNhap);
+
+            if (maCVu?.Trim().ToUpper() != "QL")
+            {
+                MessageBox.Show("Chức năng này chỉ dành cho quản lý!", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            OpenChildForm(new BaoCaoThongKe());
+        }
     }
 }
