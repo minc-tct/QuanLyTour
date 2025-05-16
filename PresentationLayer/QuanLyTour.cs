@@ -82,10 +82,10 @@ namespace PresentationLayer
                 dptNgayBD.Value = Convert.ToDateTime(dgvThongtinTour.Rows[i].Cells[5].Value);
                 dptNgayKT.Value = Convert.ToDateTime(dgvThongtinTour.Rows[i].Cells[6].Value);
 
-                cboMaLoaiTour.SelectedItem = dgvThongtinTour.Rows[i].Cells[7].Value.ToString();
-                cboMaPhuongTien.SelectedItem = dgvThongtinTour.Rows[i].Cells[8].Value.ToString();
-                cboMaXuatPhat.SelectedItem = dgvThongtinTour.Rows[i].Cells[9].Value.ToString();
-                cboMaDiemDuLich.SelectedItem = dgvThongtinTour.Rows[i].Cells[10].Value.ToString();
+                cboMaLoaiTour.SelectedValue = dgvThongtinTour.Rows[i].Cells[7].Value.ToString();
+                cboMaPhuongTien.SelectedValue = dgvThongtinTour.Rows[i].Cells[8].Value.ToString();
+                cboMaXuatPhat.SelectedValue = dgvThongtinTour.Rows[i].Cells[9].Value.ToString();
+                cboMaDiemDuLich.SelectedValue = dgvThongtinTour.Rows[i].Cells[10].Value.ToString();
 
                 string fileAnh = txtAnhTour.Text;
                 string pathAnh = Path.Combine(Application.StartupPath, "AnhTour", fileAnh);

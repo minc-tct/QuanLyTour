@@ -65,7 +65,7 @@ namespace PresentationLayer
                 return;
             }
 
-            dgvReport.DataSource = dt; // hoặc vẽ biểu đồ tùy chọn
+            dgvReport.DataSource = dt; 
             ChartMain.Series.Clear();
             ChartMain.ChartAreas.Clear();
             ChartMain.Titles.Clear();
