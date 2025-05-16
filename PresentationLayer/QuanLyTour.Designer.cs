@@ -82,17 +82,6 @@
             // 
             this.cboMaDiemDuLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboMaDiemDuLich.FormattingEnabled = true;
-            this.cboMaDiemDuLich.Items.AddRange(new object[] {
-            "DL001",
-            "DL002",
-            "DL003",
-            "DL004",
-            "DL005",
-            "DL006",
-            "DL007",
-            "DL008",
-            "DL009",
-            "DL010"});
             this.cboMaDiemDuLich.Location = new System.Drawing.Point(353, 393);
             this.cboMaDiemDuLich.Name = "cboMaDiemDuLich";
             this.cboMaDiemDuLich.Size = new System.Drawing.Size(261, 28);
@@ -136,14 +125,6 @@
             // 
             this.cboMaXuatPhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboMaXuatPhat.FormattingEnabled = true;
-            this.cboMaXuatPhat.Items.AddRange(new object[] {
-            "XP001",
-            "XP002",
-            "XP003",
-            "XP004",
-            "XP005",
-            "XP006",
-            "XP007"});
             this.cboMaXuatPhat.Location = new System.Drawing.Point(352, 331);
             this.cboMaXuatPhat.Name = "cboMaXuatPhat";
             this.cboMaXuatPhat.Size = new System.Drawing.Size(263, 28);
@@ -175,13 +156,6 @@
             // 
             this.cboMaPhuongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboMaPhuongTien.FormattingEnabled = true;
-            this.cboMaPhuongTien.Items.AddRange(new object[] {
-            "PT001",
-            "PT002",
-            "PT003",
-            "PT004",
-            "PT005",
-            "PT006"});
             this.cboMaPhuongTien.Location = new System.Drawing.Point(352, 265);
             this.cboMaPhuongTien.Name = "cboMaPhuongTien";
             this.cboMaPhuongTien.Size = new System.Drawing.Size(263, 28);
@@ -203,9 +177,6 @@
             // 
             this.cboMaLoaiTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboMaLoaiTour.FormattingEnabled = true;
-            this.cboMaLoaiTour.Items.AddRange(new object[] {
-            "NN",
-            "TN"});
             this.cboMaLoaiTour.Location = new System.Drawing.Point(352, 199);
             this.cboMaLoaiTour.Name = "cboMaLoaiTour";
             this.cboMaLoaiTour.Size = new System.Drawing.Size(262, 28);

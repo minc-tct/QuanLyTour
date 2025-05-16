@@ -261,8 +261,7 @@ namespace PresentationLayer
                 DataGridViewRow row = dgvDiemDuLich.Rows[e.RowIndex];
                 txtMaDiemDuLich.Text = row.Cells[0].Value.ToString();
                 txtTenDiemDen.Text = row.Cells[1].Value.ToString();
-                string maLoaiTour = row.Cells["MaLoaiTour"].Value.ToString();
-                cmbLoaiTourDL.SelectedValue = maLoaiTour;
+                cmbLoaiTourDL.SelectedItem = row.Cells[2].Value.ToString();
             }
         }
 

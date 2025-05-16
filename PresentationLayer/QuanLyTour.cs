@@ -18,6 +18,10 @@ namespace PresentationLayer
     public partial class QuanLyTour : Form
     {
         private QuanLyTourBL quanlytourbl = new QuanLyTourBL();
+        private LoaiTourBL loaiTourBL = new LoaiTourBL();
+        private DiemKhoiHanhBL diemKhoiHanhBL = new DiemKhoiHanhBL();
+        private PhuongTienTourBL phuongTienBL = new PhuongTienTourBL();
+        private DiemDuLichBL diemDLBL = new DiemDuLichBL();
         public QuanLyTour()
         {
             InitializeComponent();
@@ -32,6 +36,30 @@ namespace PresentationLayer
             {
                 MessageBox.Show("Lỗi khi tải danh sách tour  : " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            var dsLoaiTour = loaiTourBL.GetAllLoaiTour();
+            var dsDiemKH = diemKhoiHanhBL.GetDiemKhoiHanhs();
+            var dsphuongTien = phuongTienBL.GetPhuongTienTours();
+            var dsDiemDuLich = diemDLBL.GetDiemDuLiches();
+            //ComboBox tên loại Tour
+            cboMaLoaiTour.DataSource = dsLoaiTour;
+            cboMaLoaiTour.DisplayMember = "TenLoaiTour";
+            cboMaLoaiTour.ValueMember = "MaLoaiTour";
+            cboMaLoaiTour.SelectedIndex = 0;
+            //ComboBox Điểm xuất phát tour
+            cboMaXuatPhat.DataSource = dsDiemKH;
+            cboMaXuatPhat.DisplayMember = "DiaDiemXP";
+            cboMaXuatPhat.ValueMember = "MaXP";
+            cboMaXuatPhat.SelectedIndex = 0;
+            //ComboBox Phương tiện tour
+            cboMaPhuongTien.DataSource = dsphuongTien;
+            cboMaPhuongTien.DisplayMember = "TenPhuongTien";
+            cboMaPhuongTien.ValueMember = "MaPhuongTien";
+            cboMaPhuongTien.SelectedIndex = 0;
+            //ComboBox Điểm du lịch
+            cboMaDiemDuLich.DataSource = dsDiemDuLich;
+            cboMaDiemDuLich.DisplayMember = "TenDDL";
+            cboMaDiemDuLich.ValueMember = "MaDDL";
+            cboMaDiemDuLich.SelectedIndex = 0;
         }
         private void QuanLyTour_Load(object sender, EventArgs e)
         {
@@ -132,10 +160,10 @@ namespace PresentationLayer
                     GiaTour = decimal.Parse(txtGiaTour.Text.Trim()),
                     TGBatDau = dptNgayBD.Value,
                     TGKetThuc = dptNgayKT.Value,
-                    MaLoaiTour = cboMaLoaiTour.Text.Trim(),
-                    MaPhuongTien = cboMaPhuongTien.Text.Trim(),
-                    MaXP = cboMaXuatPhat.Text.Trim(),
-                    MaDDL = cboMaDiemDuLich.Text.Trim()
+                    MaLoaiTour = cboMaLoaiTour.SelectedValue.ToString(),
+                    MaPhuongTien = cboMaPhuongTien.SelectedValue.ToString(),
+                    MaXP = cboMaXuatPhat.SelectedValue.ToString(),
+                    MaDDL = cboMaDiemDuLich.SelectedValue.ToString()
                 };
 
                 quanlytourbl.ThemTour(tour);
